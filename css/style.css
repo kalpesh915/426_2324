@@ -1,0 +1,24 @@
+h1{
+    color: red;
+    background-color: aqua;
+    padding: 20px;
+    text-align: center;
+}
+
+h2{
+    background-color: brown;
+    color: white;
+    padding: 20px;
+}
+
+h3{
+    padding: 20px;
+    color: white;
+    background-color: black;
+}
+
+p{
+    background-color: crimson;
+    color: white;
+    padding: 10px;
+}
