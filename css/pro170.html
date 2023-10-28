@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .header, .footer{
+            background-color: #cccccc;
+            color: black;
+            padding: 20px;
+        }
+
+        .column{
+            float: left;
+            padding: 15px;
+        }
+
+        .clearfix::after{
+            display: table;
+            content: "";
+            clear: both;
+        }
+
+        .menu{
+            width: 30%;
+        }
+
+        .content{
+            width: 70%;
+        }
+
+        .menu ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .menu ul li{
+            display: block;
+            background-color: brown;
+            color: white;
+            padding: 15px;
+            margin: 5px 0px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Header of Website</h1>
+    </div>
+    <div class="clearfix">
+        <div class="column menu">
+            <ul>
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+                <li>Link 4</li>
+                <li>Link 5</li>
+            </ul>
+        </div>
+        <div class="column content">
+            <h1>Content of Website</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam nihil sit itaque cum, error asperiores recusandae impedit similique enim obcaecati expedita assumenda, ipsa soluta unde quis a ad aliquid. Cumque!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam nihil sit itaque cum, error asperiores recusandae impedit similique enim obcaecati expedita assumenda, ipsa soluta unde quis a ad aliquid. Cumque!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam nihil sit itaque cum, error asperiores recusandae impedit similique enim obcaecati expedita assumenda, ipsa soluta unde quis a ad aliquid. Cumque!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam nihil sit itaque cum, error asperiores recusandae impedit similique enim obcaecati expedita assumenda, ipsa soluta unde quis a ad aliquid. Cumque!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam nihil sit itaque cum, error asperiores recusandae impedit similique enim obcaecati expedita assumenda, ipsa soluta unde quis a ad aliquid. Cumque!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam nihil sit itaque cum, error asperiores recusandae impedit similique enim obcaecati expedita assumenda, ipsa soluta unde quis a ad aliquid. Cumque!</p>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Footer of Website</h2>
+    </div>
+</body>
+</html>
