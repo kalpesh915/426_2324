@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            width: 200px;
+            background-color: #f1f1f1;
+            border: 1px solid black;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            overflow: auto;
+        }
+
+        li a{
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+
+        /* when mouse over on a tag specified in li and not have .active class then apply
+        following code */
+        li a:hover:not(.active){
+            background-color: #555555;
+            color: white;
+        }
+
+        .active{
+            background-color: green;
+            color: white;
+        }
+
+        div{
+            margin-left: 220px;
+        }
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li><a href="#" class="active">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+
+    <div>
+        <h1>This is Fixed menu Example</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo animi repudiandae eum commodi corporis consectetur, dolor laboriosam velit iusto odit. Quaerat doloribus laborum accusantium totam, obcaecati quam odit corporis.</p>
+    </div>
+</body>
+</html>
