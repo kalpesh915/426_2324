@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="text"], input[type="password"]{
+            box-sizing: border-box;
+            width: 10%;
+            padding: 20px;
+            margin: 10px 0px;
+            background-color: green;
+            color: white;
+            transition: all 2s;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" name="email">
+        <input type="password" name="password">
+        <input type="button" value="Send Data">
+    </form>
+</body>
+</html>

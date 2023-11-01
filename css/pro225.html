@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .dropdown{
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content{
+            display: none;
+            position: absolute;
+        }
+
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <img src="images/img_man.jpg" height="100">
+        <div class="dropdown-content">
+            <img src="images/img_man.jpg">
+        </div>
+    </div>
+</body>
+</html>
