@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        .tooltip{
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px solid black;
+        }
+
+        .tooltip-text{
+            /* visibility: hidden; */
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px 0px;
+            border-radius: 10px;
+        }
+
+        .tooltip-text::after{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-color: black transparent  transparent;
+            border-style: solid;
+        }
+
+        .tooltip:hover .tooltip-text{
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque quos! Doloremque quasi impedit iusto voluptas provident? Laborum odio iste maiores quis explicabo placeat debitis voluptatibus soluta quasi, dignissimos ipsa.</p>
+    <div class="tooltip">
+        Mouse over me
+        <div class="tooltip-text">Welcome</div>
+    </div>
+</body>
+</html>
