@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            display: inline-block;
+            border-radius: 15px;
+            background-color: #f4511e;
+            border: none;
+            color: white;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            box-shadow: 0px 15px gray;
+        }
+
+        .button span{
+            display: inline-block;
+            position: relative;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .button:active{
+            transform: translateY(10px);
+            box-shadow: 0px 5px gray;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button class="button"><span>Hover</span></button>
+</body>
+
+</html>
