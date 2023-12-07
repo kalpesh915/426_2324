@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* used for entire webpage */
+        :root{
+            --color1 : #1e9000;
+        }
+
+        body {
+            background-color: var(--color1);
+            ;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--color1);
+        }
+
+        .container {
+            color: var(--color1);
+            background-color: #ffffff;
+            padding: 15px;
+        }
+
+        button {
+            /* --color1 used for only button */
+            --color1 : purple;
+            --color2 : orange;
+            background-color: #ffffff;
+            color: var(--color1);
+            border: 1px solid var(--color2);
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Smart way of Coding</h1>
+    <div class="container">
+        <h2>Welcome to world of var()</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ducimus doloribus impedit culpa quae. Mollitia vitae, sint harum soluta, quia possimus, quasi at accusamus sapiente architecto magnam explicabo iure sit.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem sunt labore tenetur quod beatae obcaecati at vitae atque cum, rerum eius sapiente corporis deserunt dolor fugit quaerat dignissimos sit possimus.</p>
+
+        <button>Yes</button>
+        <button>No</button>
+    </div>
+</body>
+
+</html>
