@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* this code get effected between screen width 600px to 1000px only */
+        @media screen and (min-width:600px) and (max-width:1000px){
+            body{
+                background-color: olive;
+            }
+        }
+    </style>
+</head>
+<body onresize="getwidth()">
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    function getwidth(){
+        document.getElementById("op").innerHTML = screen.width;
+    }
+</script>

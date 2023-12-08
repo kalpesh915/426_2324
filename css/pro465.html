@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body{
+            background-color: teal;
+        }
+
+
+        @media screen and (max-width:500px){
+            body{
+                background-color: purple;
+            }
+        }
+
+        @media screen and (max-width:700px){
+            body{
+                background-color: red;
+            }
+        }
+
+        @media screen and (max-width:1000px){
+            body{
+                background-color: peru;
+            }
+        }
+
+        /* 
+            when set rules with max-width property must set rules in descending order,
+            when set rules with min-width property must set rules in ascending order,
+        */
+    </style>
+</head>
+<body onresize="getWidth()">
+    <h1 id="op"></h1>
+    <h1>Welcome to world of Style </h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque vitae nobis in rem laborum neque impedit porro perspiciatis quae, corporis accusamus magnam quidem, consequuntur fuga beatae consequatur maiores placeat repudiandae!</p>
+</body>
+</html>
+
+<script>
+    function getWidth(){
+        document.getElementById("op").innerHTML = screen.width;
+    }
+</script>

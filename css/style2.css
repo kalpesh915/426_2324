@@ -1,0 +1,16 @@
+body{
+    background-color: orchid;
+}
+
+h1{
+    background-color: brown;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+p{
+    background-color: black;
+    color: white;
+    padding: 15px;
+}

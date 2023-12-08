@@ -1,0 +1,16 @@
+body{
+    background-color: moccasin;
+}
+
+h1{
+    background-color: peru;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+p{
+    background-color: blueviolet;
+    color: white;
+    padding: 15px;
+}

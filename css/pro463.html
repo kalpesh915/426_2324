@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body{
+            background-color: teal;
+        }
+
+        /* when screen width is above 700px */
+        @media screen and (min-width:700px){
+            body{
+                background-color: peru;
+            }
+        }
+    </style>
+</head>
+<body onresize="getWidth()">
+    <h1 id="op"></h1>
+    <h1>Welcome to world of Style </h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque vitae nobis in rem laborum neque impedit porro perspiciatis quae, corporis accusamus magnam quidem, consequuntur fuga beatae consequatur maiores placeat repudiandae!</p>
+</body>
+</html>
+
+<script>
+    function getWidth(){
+        document.getElementById("op").innerHTML = screen.width;
+    }
+</script>
