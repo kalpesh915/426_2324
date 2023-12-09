@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;
+            background-color: dodgerblue;
+            height: 300px;
+        }
+
+        .item{
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties. -->
+        <div class="item" style="align-self: flex-start;">1</div>
+        <div class="item" style="align-self: flex-end;">2</div>
+        <div class="item" style="align-self: center;">3</div>
+        <div class="item" style="align-self: stretch;">4</div>
+        <div class="item" style="align-self: safe;">5</div>
+    </div>
+</body>
+</html>

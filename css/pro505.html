@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;
+            background-color: dodgerblue;
+            padding: 20px;
+        }
+
+        .item1{
+            box-sizing: border-box;
+            flex: 50%;
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .item2{
+            box-sizing: border-box;
+            flex: 50%;
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        @media screen and (max-width:700px){
+            .item1, .item2{
+                flex: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+    </div>
+</body>
+</html>
