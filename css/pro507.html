@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }    
+
+        .col-1{
+            width: 25%;
+        }
+
+        .col-2{
+            width: 75%;
+        }
+
+        .col-1, .col-2{
+            float: left;
+            border: 1px solid black;
+        }
+
+
+        /* media query applied when screen size less than 600px */
+        @media screen and (max-width:600px){
+            .col-1, .col-2{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="col-1">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti veritatis quam quo facilis pariatur inventore iusto repellendus modi eum placeat numquam quibusdam eveniet, blanditiis rem necessitatibus non a et cum?</p>
+    </div>
+
+    <div class="col-2">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptas doloribus earum delectus eius odio deserunt nostrum sed culpa quasi pariatur quas cum recusandae, tempora sint maiores. Amet, cum commodi.</p>
+    </div>
+</body>
+</html>
