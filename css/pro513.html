@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 10px;
+            /* border: 1px solid black; */
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+
+        html {
+            font-family: "Lucida Sans", sans-serif;
+        }
+
+        header {
+            background-color: #9933cc;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            padding: 8px;
+            margin-bottom: 7px;
+            background-color: #33b5e5;
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        .menu li:hover {
+            background-color: #0099cc;
+        }
+
+        .sidebar{
+            background-color: brown;
+            color: white;
+        }
+
+        /* Media query for small screen less than 900px all the colums resized to 100% */
+
+        @media screen and (max-width:900px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Example of Responsive Web Design</h1>
+    </header>
+
+    <div class="row">
+        <div class="col-3 menu">
+            <ul>
+                <li>Rajkot</li>
+                <li>Surat</li>
+                <li>Ahamdabad</li>
+                <li>Baroda</li>
+                <li>Bhuj</li>
+            </ul>
+        </div>
+
+        <div class="col-6">
+            <h1>Main Content of Webpage</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa explicabo perferendis temporibus in voluptates hic accusamus omnis a nesciunt, delectus doloribus earum esse ullam consequatur expedita excepturi officiis minus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa explicabo perferendis temporibus in voluptates hic accusamus omnis a nesciunt, delectus doloribus earum esse ullam consequatur expedita excepturi officiis minus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa explicabo perferendis temporibus in voluptates hic accusamus omnis a nesciunt, delectus doloribus earum esse ullam consequatur expedita excepturi officiis minus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa explicabo perferendis temporibus in voluptates hic accusamus omnis a nesciunt, delectus doloribus earum esse ullam consequatur expedita excepturi officiis minus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa explicabo perferendis temporibus in voluptates hic accusamus omnis a nesciunt, delectus doloribus earum esse ullam consequatur expedita excepturi officiis minus.</p>
+        </div>
+
+        <div class="col-3 sidebar">
+            <h3>Sidebar</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa explicabo perferendis temporibus in voluptates hic accusamus omnis a nesciunt, delectus doloribus earum esse ullam consequatur expedita excepturi officiis minus.</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>
