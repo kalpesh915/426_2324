@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="Bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="Bootstrap5/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt neque officiis fugiat ipsum, unde,
+            molestias adipisci dignissimos quaerat exercitationem quibusdam hic tempore quos voluptas porro repellat rem
+            ipsa id.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt neque officiis fugiat ipsum, unde,
+            molestias adipisci dignissimos quaerat exercitationem quibusdam hic tempore quos voluptas porro repellat rem
+            ipsa id.</p>
+        <button class="btn btn-primary" data-bs-toggle="popover" title="Welcome to Bootstrap5"
+            data-bs-content="welcome to world of Bootstrap5 with new components for web layout"
+            data-bs-placement="top" data-bs-trigger="hover">Mouse over me</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt neque officiis fugiat ipsum, unde,
+            molestias adipisci dignissimos quaerat exercitationem quibusdam hic tempore quos voluptas porro repellat rem
+            ipsa id.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt neque officiis fugiat ipsum, unde,
+            molestias adipisci dignissimos quaerat exercitationem quibusdam hic tempore quos voluptas porro repellat rem
+            ipsa id.</p>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+</script>
