@@ -1,0 +1,45 @@
+.title{
+    text-align: center;
+    padding: 20px;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}
+
+/* team  */
+
+.team-box{
+    padding: 10px;
+}
+
+.team-box img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.team-box img:hover{
+    border: 1px solid black;
+}
+
+.team-box h3{
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.team-box p{
+    text-align: justify;
+}
+
+.team-box .icon-box{
+    text-align: center;
+}
+
+.social{
+    color: black;
+    font-size: 35px;
+    padding: 10px;
+}
+
+.social:hover{
+    background-color: black;
+    color: white;
+}
