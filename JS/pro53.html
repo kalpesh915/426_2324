@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1 id="demo"></h1>
+</body>
+</html>
+
+<script>
+    let x = 1000;
+    // let x = 10;
+    {
+        let x = 100; // block level scope
+        document.write("<hr> Between Block x is "+x);
+    }
+
+    document.write("<hr> Outside Block x is "+x);
+</script>
