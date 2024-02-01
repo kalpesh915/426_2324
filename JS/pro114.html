@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+</body>
+
+</html>
+<script>
+    /*
+        JavaScript String substring()
+        substring() is similar to slice().
+        The difference is that start and end values less than 0 are treated as 0 in substring().
+        negative values are not allowed
+    */ 
+
+             ///012345678901234567890123456789012345678
+    let str1 = "welcome to world of java script strings";
+    document.write("<hr>"+str1);
+    document.write("<hr>"+str1.substring(0, 10));
+    document.write("<hr>"+str1.substring(10, 20));
+    document.write("<hr>"+str1.substring(12, 30));
+    document.write("<hr>"+str1.substring(20));
+    document.write("<hr>"+str1.substring(-10));
+    document.write("<hr>"+str1.substring(-20, -10));
+</script>
