@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    /*
+        Integer Precision
+        Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
+    */
+
+    let x = 999999999999999;
+    document.write("<hr>"+x);
+    x = 9999999999999999;
+    document.write("<hr>"+x);
+    x = 9999999999999999n; // BigInt
+    document.write("<hr>"+x);
+    x = 99999999999999999999999999999999n; // BigInt
+    document.write("<hr>"+x);
+</script>

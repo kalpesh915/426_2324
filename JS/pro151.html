@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+</body>
+
+</html>
+<script>
+    /*
+        Operators that can be used on a JavaScript Number can also be used on a BigInt.
+    */ 
+   let x = 100n;
+   let y = 10;
+   //let z = x + y;
+   let z = x + BigInt(y);
+   document.write("<hr>"+(z)+ " type is "+typeof(z));
+
+</script>
