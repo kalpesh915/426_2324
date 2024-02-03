@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        /*
+            min = 10 , max = 100
+            Math.floor(Math.random() * (max - min + 1)) + min
+            Math.floor(Math.random() * (90 + 1)) + min
+            Math.floor(Math.random() * (91) + min
+            Math.floor(0.5 * (91)) + min
+            Math.floor(45.5) + min
+            Math.floor(45.5) + 10
+            Math.floor(55.5) 
+            55
+        */ 
+    }
+
+
+    document.write("<hr>"+getRndInteger(50, 100));
+    document.write("<hr>"+getRndInteger(50, 100));
+    document.write("<hr>"+getRndInteger(50, 100));
+    document.write("<hr>"+getRndInteger(50, 100));
+    document.write("<hr>"+getRndInteger(50, 100));
+</script>
