@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        JavaScript Array splice()
+        The splice() method can be used to add new items to an array: 
+        The first parameter (2) defines the position where new elements should be added (spliced in).
+        The second parameter (0) defines how many elements should be removed.
+        The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+
+        splice(start index, number of element to remove, new elements);
+    */ 
+                // 0        1           2       3           4
+   let city = ["Rajkot", "Baroda", "Bhuj", "Jamnagar", "Junagadh"];
+
+   document.write("<hr>"+city);
+
+   city = city.toSpliced(0, 2);
+
+   document.write("<hr>"+city);
+</script>

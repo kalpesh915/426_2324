@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Pineapple", "Lichi"];
+    document.write("<hr>"+fruits);
+    //Adding elements with high indexes can create undefined "holes" in an array
+    fruits[15] = "Kiwi";
+    fruits[fruits.length] = "Watermalon";
+    document.write("<hr>"+fruits);
+</script>
