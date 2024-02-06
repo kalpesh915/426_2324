@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let data = [11, 100, 22, 1, 45, 65, 89, 76, 66, 1000, 101];
+
+    /*
+        Numeric Sort
+        By default, the sort() function sorts values as strings.
+        This works well for strings ("Apple" comes before "Banana").
+        If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".Because of this, the sort() method will produce incorrect result when sorting numbers.
+    */ 
+
+    document.write("<hr>"+data);
+    document.write("<hr>"+data.sort((x, y)=> x - y));
+
+    /*
+        compare function
+        (x, y)=> x - y)
+        compare function receive 2 values from our array then compare both values
+
+        x       y
+        11      100     x - y   -89
+        100     22              +78
+        100     1               +99
+        100     45              +55
+        100     65              +35
+        100     89              +11
+        100     76              +24
+        100     66              +34
+        100     1000            -900
+        1000    101             +899
+        1000
+        result +ve, -ve, 0
+    */ 
+</script>

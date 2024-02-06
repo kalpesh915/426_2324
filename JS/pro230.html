@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    const cars = [
+        { type: "Volvo", year: 2016 },
+        { type: "Saab", year: 2001 },
+        { type: "BMW", year: 2010 },
+        { type: "Tata", year: 2011 },
+        { type: "Mahindra", year: 2010 },
+        { type: "Hyundai", year: 2010 },
+        { type: "Audi", year: 2010 },
+    ];
+
+    console.log(cars);
+
+    console.log(cars.sort(function(a, b){
+        //return a.year - b.year;
+        return a.type.toLowerCase() > b.type.toLowerCase();
+    }));
+</script>

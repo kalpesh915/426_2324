@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array find()
+        The find() method returns the value of the first array element that passes a test function.This example finds (returns the value of) the first element that is larger than 18:
+    */
+            /// 0   1   2   3   4   5   6   7   8   9   10  11
+    let data = [11, 12, 34, 35, 56, 76, 89, 90, 86, 11, 19, 17];
+
+    let ans = data.findLastIndex((value) => {
+        return value >= 18;
+    });
+
+    document.write(ans);
+</script>
