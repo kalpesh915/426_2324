@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            height: 500px;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+        .image{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body onload="startSlider()">
+    <div class="container">
+        <img src="" class="image" id="sliderimg">
+    </div>
+    <hr>
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImg()">Next</button>
+    <p id="op"></p>
+</body>
+
+</html>
+
+<script>
+
+    let count = 0;
+    const sliderimg = document.getElementById("sliderimg");
+    const op = document.getElementById("op");
+
+    let images = [
+        "images/slider1.jpg", "images/slider2.jpg", "images/slider3.jpg", "images/slider4.jpg", "images/slider5.jpg", "images/slider6.jpg", "images/slider7.jpg", "images/slider8.jpg", "images/slider9.jpg", "images/slider10.jpg", "images/slider11.jpg", "images/slider12.jpg" 
+    ];
+
+    function startSlider(){
+        //alert("Called");
+        sliderimg.src = images[count];
+
+        // Example code for timer in JS
+        setInterval(nextImg, 5000); // call nextImg function after every 2 seconds
+    }
+
+    function prevImage(){
+        count--;
+        if(count < 0){
+            count = 11;
+        }
+        sliderimg.src = images[count];
+        op.innerHTML = images[count];
+    }
+
+    function nextImg(){
+        count++;
+        if(count > 11){
+            count = 0;
+        }
+        sliderimg.src = images[count];
+        op.innerHTML = images[count];
+    }
+</script>
