@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    /*
+        find maximum value out of 3 numbers with use of nested if 
+    */ 
+
+    let ip1 = Number(prompt("Enter value fo ip1"));
+    let ip2 = Number(prompt("Enter value fo ip1"));
+    let ip3 = Number(prompt("Enter value fo ip1"));
+    let ans = 0;
+
+    document.write(`<hr> values are ip1 ${ip1}, ip2 ${ip2}, ip3 ${ip3}`);
+                    // ip1 = 1111, ip2 = 212, ip3 = 3311
+    if(ip1 > ip2){
+        if(ip1 > ip3){
+            ans = ip1;
+        }else{
+            ans = ip3;
+        }
+    }else{
+        if(ip2 > ip3){
+            ans = ip2;
+        }else{
+            ans = ip3;
+        }
+    }
+
+    document.write("<hr>Maximum is "+ans);
+</script>

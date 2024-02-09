@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    let ip1 = (prompt("Enter Month Number")); // string
+
+    /*
+        Strict Comparison
+        Switch cases use strict comparison (===). The values must be of the same type to match.
+        A strict comparison can only be true if the operands are of the same type.
+    */ 
+    
+    switch(ip1){
+        case 11: // number
+        case 12:
+        case 1:
+        case 2:{
+            document.write("Winter");
+            break;
+        }
+        case 3:
+        case 4:
+        case 5:
+        case 6:{
+            document.write("Summer");
+            break;
+        }
+        case 7:
+        case 8:
+        case 9:
+        case 10:{
+            document.write("Monsoon");
+            break;
+        }
+        default:{
+            document.write("<hr>Out of Range");
+        }
+    }
+</script>
