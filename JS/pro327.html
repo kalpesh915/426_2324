@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    /*
+        The JavaScript for in statement loops through the properties of an Object:
+    */ 
+
+    const student = [11, 22, 33, 44, 55];
+
+    document.write("<hr>"+student);
+
+    // for in loop copied one by one element from student and store in x
+    for(let x in student){
+        //document.write("<hr>"+x);
+        //document.write("<hr>"+student[x]);
+        document.write("<hr>"+x+" is "+student[x]);
+    }
+</script>

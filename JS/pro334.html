@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    /*
+        make sum of all digits in entered number
+        ex. 14573 = 20
+    */ 
+
+    let x = Number(prompt("Enter any number"));
+    let ans = 0;
+    document.write("<hr> Etered Number is "+x);
+    while(x > 0){
+        ans = ans + x % 10;
+        x = parseInt(x / 10);
+    }
+
+    document.write("<hr> Answer is "+ans);
+</script>
