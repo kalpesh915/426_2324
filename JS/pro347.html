@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    let myData = new Set(["Baroda", "Rajkot", "Surat"]);
+
+    document.write("<hr>"+myData.size);
+    myData.add("Ahamdabad");
+    myData.add("Jamnagar");
+    document.write("<hr>"+myData.size);
+    myData.add("Surat");
+    myData.add("surat");
+    document.write("<hr>"+myData.size);
+    document.write("<hr>"+myData.has("Rajkot"));
+    myData.delete("Rajkot");
+    document.write("<hr>"+myData.has("Rajkot"));
+    myData.clear();
+    document.write("<hr>"+myData.size);
+</script>

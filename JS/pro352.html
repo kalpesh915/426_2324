@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    let myData = new Map([
+        [1, "Rajkot"],
+        [2, "Surat"],
+        [3, "Bhuj"],
+        [4, "Jamanagar"],
+        [5, "Baroda"],
+        [6, "Bhavanagar"],
+        [7, "Morbi"],
+        [8, "AMreli"],
+        [9, "Wanakaner"],
+        [10, "Jetpur"],
+    ]);
+
+    /*for(let x of myData.keys()){
+        document.write(" "+x);
+    }*/
+
+    /*for(let x of myData.values()){
+        document.write(" "+x);
+    }*/
+
+    for(let x of myData.entries()){
+        document.write(" "+x);
+    }
+</script>
