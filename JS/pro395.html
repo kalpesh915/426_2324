@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onkeyup="validate(this.value)" placeholder="Enter your Age">
+    <hr>
+    <p id="msg"></p>
+    <p id="count"></p>
+</body>
+</html>
+
+<script>
+    let msg = document.getElementById("msg");
+    let count = document.getElementById("count");
+    let x = 0;
+
+    function validate(age){
+        x++;
+        try{
+            if(age == ""){
+                throw "Must Enter age ";
+            }else if(isNaN(age)){
+                throw "Invalid Age";
+            }else{
+                age = Number(age);
+
+                if(age >= 18){
+                    throw "Welcome to Voting Booth";
+                }else if(age >= 15){
+                    throw "Please try in Next Election";
+                }else{
+                    throw "Too much young for Voting";
+                }
+            }
+        }catch(err){
+            msg.innerHTML = err
+        } 
+        finally{
+            // must be executed
+            count.innerHTML = x;
+        }
+    }
+</script>
