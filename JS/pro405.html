@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    /*
+        A global variable has Global Scope:
+        All scripts and functions on a web page can access it. 
+    */ 
+    let x = 100; // global variable
+
+    function msg(){
+        document.write("<hr>"+x);
+    }
+
+    msg();
+
+    document.write("<hr>"+x);
+</script>

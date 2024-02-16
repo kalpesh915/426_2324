@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    /*
+        Automatically Global
+
+        If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.
+
+        Warning
+
+        Do NOT create global variables unless you intend to.
+        Your global variables (or functions) can overwrite window variables (or functions).Any function, including the window object, can overwrite your global variables and functions.
+    */ 
+    
+
+    function msg(){
+        x = 100; // global variable
+        document.write("<hr>"+x);
+    }
+
+    msg();
+
+    document.write("<hr>"+x);
+</script>

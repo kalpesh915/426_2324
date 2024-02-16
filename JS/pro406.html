@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    /*
+        Automatically Global
+
+        If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.
+    */ 
+    x = 100; // global variable
+
+    function msg(){
+        document.write("<hr>"+x);
+    }
+
+    msg();
+
+    document.write("<hr>"+x);
+</script>
