@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+</body>
+
+</html>
+
+<script>
+    /*
+        The constructor method is a special method:
+            It has to have the exact name "constructor"
+            It is executed automatically when a new object is created
+            It is used to initialize object properties
+            
+            If you do not define a constructor method, JavaScript will add an empty constructor method. 
+    */ 
+
+    class Student{
+        constructor(roll, fname, lname, city){
+            // The constructor method is called automatically when a new object is created.
+
+            this.roll = roll;
+            this.fname = fname;
+            this.lname = lname;
+            this.city = city;
+            this.state = "Gujarat";
+            this.country = "India";
+        }
+
+        printer(){
+            return "Welcome "+this.fname+" "+this.lname+" to "+this.city+" your roll no. is "+this.roll;
+        }
+    }
+
+    const student1 = new Student(1, "Priyajitsinh", "jadeja", "Rajkot");
+    const student2 = new Student(2, "Thakrar", "Aryan", "Rajkot");
+    const student3 = new Student(3, "Shilu", "Nishit", "Rajkot");
+    const student4 = new Student(4, "Smit", "Vanzara", "Rajkot");
+
+    console.log(student1.printer());
+    console.log(student2.printer());
+    console.log(student3.printer());
+    console.log(student4.printer());
+
+    // A JavaScript class is not an object. It is a template for JavaScript objects.
+</script>
