@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // The debugger Keyword
+    /*
+        The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.
+        This has the same function as setting a breakpoint in the debugger.
+        If no debugging is available, the debugger statement has no effect.
+        With the debugger turned on, this code will stop executing before it executes the third line.
+    */ 
+
+    const ip1 = 10;
+    debugger;
+    const ip2 = 20;
+    debugger;
+    const ans = ip1 + ip2;
+    debugger;
+    document.write("Answer is "+ans);
+</script>
