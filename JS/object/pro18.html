@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+       Nested Objects 
+       Values in an object can be another object:
+    */ 
+    const student = {
+        roll : 123,
+        fname : "Smit",
+        lname : "Vanzara",
+        getData : function(){
+            return this.roll+" "+this.fname+" "+this.lname;
+        },
+        setData : function(roll, fname, lname){
+            // variables between () is known as local variable for setData()
+            this.roll = roll;
+            this.fname = fname;
+            this.lname = lname;
+            // variables with this. is property of student Object
+        }
+    };
+
+    document.write("<hr>"+student.getData());
+
+    student.setData(111, "Aryan", "Thakar");
+
+    document.write("<hr>"+student.getData());
+
+</script>

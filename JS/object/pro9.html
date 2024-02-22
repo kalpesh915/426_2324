@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        Properties are the most important part of any JavaScript object.
+
+        Properties are the values associated with a JavaScript object. A JavaScript object is a collection of unordered properties. Properties can usually be changed, added, and deleted, but some are read only.
+    */ 
+    
+
+    // roll, fname, lname are known as property
+    const student = {
+        roll : 123,
+        fname : "Smit",
+        lname : "Vanzara"
+    };
+
+    let tmp = "roll";
+    document.write("<hr>"+student.roll);
+    document.write("<hr>"+student["roll"]);
+    document.write("<hr>"+student[tmp]);
+</script>

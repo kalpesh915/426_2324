@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        JavaScript Accessors (Getters and Setters)
+        ECMAScript 5 (ES5 2009) introduced Getter and Setters.
+        Getters and setters allow you to define Object Accessors (Computed Properties).
+
+        JavaScript Getter (The get Keyword)
+    */ 
+    const student = {
+        roll : 123,
+        fname : "Smit",
+        lname : "Vanzara",
+        get fn(){
+            return this.fname;
+        },
+        set fn(value){
+            this.fname = value;
+        }
+    };
+
+    document.write("<hr>"+student.fname);
+    document.write("<hr>"+student.fn);
+    student.fn = "SMIT";
+    document.write("<hr>"+student.fn);
+
+</script>

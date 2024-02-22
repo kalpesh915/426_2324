@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        Using an Object Literal
+        This is the easiest way to create a JavaScript Object.
+        Using an object literal, you both define and create an object in one statement.
+        An object literal is a list of name:value pairs (like age:50) inside curly braces {}.
+
+        Spaces and line breaks are not important. An object definition can span multiple lines:
+    */ 
+    const student = {
+        roll: 123, 
+        fname:"Smit", 
+        lname: "Vanzar", 
+        city: "Rajkot", 
+        state: "Gujarat",
+        getData : function(){ 
+            return this.roll+" "+this.fname+" "+this.lname
+        }
+    };
+
+    document.write(student.getData());
+</script>
