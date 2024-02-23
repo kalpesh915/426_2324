@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        All JavaScript objects inherit properties and methods from a prototype.
+        In the previous chapter we learned how to use an object constructor:  
+    */
+
+    function Student(roll, fname, lname, city){
+        this.roll = roll;
+        this.fname = fname;
+        this.lname = lname;
+        this.city = city;
+    }
+
+    const student1 = new Student(111, "Priyjitsinh", "Jadeja", "Rajkot");
+    const student2 = new Student(112, "Smit", "Vanzara", "Rajkot");
+
+    console.log(student1);
+    console.log(student2);
+
+    Student.nationality = "Indian"; // not added
+
+    console.log(student1);
+    console.log(student2);
+</script>

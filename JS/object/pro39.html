@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        The problem with a home made iterable:
+        It does not support the JavaScript for..of statement.
+
+        A JavaScript iterable is an object that has a Symbol.iterator.
+        The Symbol.iterator is a function that returns a next() function.
+    */
+
+    myNumbers = {};
+
+    myNumbers[Symbol.iterator] = function(){
+        let tmp = 0;
+        let done = false;
+
+        return {
+            next : function(){
+                tmp += 10;
+                if(tmp > 50){
+                    done = true;
+                }
+
+                return{ value : tmp, done : done}
+            }
+        }
+    }
+
+    for(let x of myNumbers){
+        console.log(x);
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Iterators
+        The iterator protocol defines how to produce a sequence of values from an object.   
+        An object becomes an iterator when it implements a next() method.
+
+        working of itertor
+        ------------------
+        Value           Done(array is over or not)
+        Rajkot          false
+        Surat           false
+        Baroda          false
+        Bhuj            false
+        Junagadh        true
+    */
+
+    for (let x of ["Rajkot", "Surat", "Baroda", "Bhuj", "Junagadh"]) {
+        document.write(" "+x);
+        
+    }
+</script>

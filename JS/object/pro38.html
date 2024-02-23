@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Homemade Iterator
+    */
+
+    function myNumbers() {
+        let tmp = 0;
+
+        //nested funtion
+        return {
+            next: function () {
+                tmp += 10;
+                return { value : tmp, done : false }
+            }
+        }
+    }
+
+    const myFunction = myNumbers();
+    console.log(myFunction.next());
+    console.log(myFunction.next());
+    console.log(myFunction.next());
+    console.log(myFunction.next());
+    console.log(myFunction.next());
+</script>
