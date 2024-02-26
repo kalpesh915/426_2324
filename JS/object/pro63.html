@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let counter = {
+        count: 0
+    }
+
+    Object.defineProperty(counter, "increment", {
+        get: function () {
+            this.count++;
+        }
+    })
+
+    Object.defineProperty(counter, "decrement", {
+        get : function(){
+            this.count--;
+        }
+    });
+
+    Object.defineProperty(counter, "reset", {
+        get : function(){
+            this.count = 100;
+        }
+    });
+
+    Object.defineProperty(counter, "add", {
+        set : function(value){
+            this.count += value;
+        }
+    });
+
+    Object.defineProperty(counter, "minus", {
+        set : function(value){
+            this.count -= value;
+        }
+    });
+
+    console.log(counter.count);
+    counter.increment;
+    console.log(counter.count);
+    counter.increment;
+    console.log(counter.count);
+    counter.decrement;
+    console.log(counter.count);
+    counter.decrement;
+    console.log(counter.count);
+    counter.reset;
+    console.log(counter.count);
+
+    counter.add = 200;
+    console.log(counter.count);
+    counter.minus = 50;
+    console.log(counter.count);
+</script>

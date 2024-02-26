@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        Arguments are Passed by Value
+        The parameters, in a function call, are the function's arguments.
+        JavaScript arguments are passed by value: The function only gets to know the values, not the argument's locations.
+        If a function changes an argument's value, it does not change the parameter's original value.
+        Changes to arguments are not visible (reflected) outside the function.
+    */
+
+    // count varible in function parameters is local for add10 function
+    function add10(count){
+        count += 10;
+        document.write("<hr> Between Function Call count is : "+count);    
+    }
+
+    let count = 10; // global
+    document.write("<hr> Before Function Call count is : "+count);
+    add10(count);
+    document.write("<hr> After Function Call count is : "+count);
+</script>

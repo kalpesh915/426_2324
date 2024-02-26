@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript ES5 Object Methods
+        ECMAScript 5 (2009) added a lot of new Object Methods to JavaScript.
+    */
+
+    const myData = { "fname": "Shilu", "lname": "Nishit", "city": "Rajkot" };
+    console.log(myData);
+    Object.defineProperty(myData, "getData", {
+        get: function () {
+            return this.fname + " " + this.lname;
+        }
+    });
+    console.log(myData.getData);
+</script>

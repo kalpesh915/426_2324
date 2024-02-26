@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        Objects are Passed by Reference
+        In JavaScript, object references are values.
+        Because of this, objects will behave like they are passed by reference:
+        If a function changes an object property, it changes the original value.
+        Changes to object properties are visible (reflected) outside the function.
+    */
+
+    // count varible in function parameters is local for add10 function
+    function add10(count){
+        count.value += 10;
+        document.write("<hr> Between Function Call count is : "+count.value);    
+    }
+
+    let count = {value : 10}; // global
+    
+    document.write("<hr> Before Function Call count is : "+count.value);
+    add10(count);
+    document.write("<hr> After Function Call count is : "+count.value);
+</script>
