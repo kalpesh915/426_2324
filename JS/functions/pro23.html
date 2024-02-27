@@ -1,0 +1,47 @@
+<DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Method Reuse
+        With the call() method, you can write a method that can be used on different objects. 
+    */
+
+    const Person = {
+        getFullName : function(){
+            return this.fname+ " " + this.lname;
+        }
+    }
+
+    const Person1 = {
+        fname : "Shilu",
+        lname : "Nishait"
+    }
+
+    const Person2 = {
+        fname : "Priyajitsinh",
+        lname : "Jadeja"
+    }
+
+    const Person3 = {
+        fname : "Smit",
+        lname : "Vanzara"
+    }
+
+    console.log(Person.getFullName.call(Person1));
+    console.log(Person.getFullName.call(Person2));
+    console.log(Person.getFullName.call(Person3));
+    
+</script>
