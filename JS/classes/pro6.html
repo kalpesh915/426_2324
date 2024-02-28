@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        "use strict"
+        The syntax in classes must be written in "strict mode".
+        You will get an error if you do not follow the "strict mode" rules.
+    */ 
+    class Student{
+        constructor(roll, fname, lname){
+            console.log("Constructor Called");
+            this.roll = roll;
+            this.fname = fname;
+            this.lname = lname;            
+        }
+
+        // method of class
+        getData(){
+            // uncaught ReferenceError: assignment to undeclared variable today
+            //today = new Date();
+            let today = new Date();
+            return "Welcome "+this.fname+" "+this.lname+" Your Roll No. is "+this.roll+" Data Printed on "+today;
+        }
+
+        setData(fname, lname){
+            this.fname = fname;
+            this.lname = lname;
+        }
+    }
+
+    const student1 = new Student(111, "Aryan", "Thakar");
+    //console.log(student1);
+    console.log(student1.getData());
+</script>

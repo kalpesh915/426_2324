@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        To create a class inheritance, use the extends keyword.
+        A class created with a class inheritance inherits all the methods from another class:
+    */
+
+    class Calculation1 {
+        makeSum(ip1, ip2){
+            console.log("Sum is "+(ip1 + ip2));
+        }
+        makeSub(ip1, ip2){
+            console.log("Sub is "+(ip1 - ip2));
+        }
+    }
+
+    class Calculation2 extends Calculation1{
+        makeMul(ip1, ip2){
+            console.log("Mul is "+(ip1 * ip2));
+        }
+        makeDiv(ip1, ip2){
+            console.log("Div is "+(ip1 / ip2));
+        }
+    }
+
+    class Calculation3 extends Calculation2{
+        makeMod(ip1, ip2){
+            console.log("Mod is "+(ip1 % ip2));
+        }
+    }
+
+    const obj3 = new Calculation3();
+
+    obj3.makeSum(111, 22);
+    obj3.makeSub(111, 22);
+    obj3.makeMul(111, 22);
+    obj3.makeDiv(111, 22);
+    obj3.makeMod(111, 22);
+</script>

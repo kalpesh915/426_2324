@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+       Hoisting
+       Unlike functions, and other JavaScript declarations, class declarations are not hoisted.
+       That means that you must declare a class before you can use it:
+    */
+    
+    const obj1 = new Student(111, "Hensi", "Lambhiya");
+    console.log(obj1.fname);
+    obj1.fname = "HENSI";
+    console.log(obj1.fname);
+
+    class Student{
+        constructor(roll, fname, lname){
+            this._roll = roll;
+            this._fname = fname;
+            this._lname = lname;
+        }
+
+        // getter function
+        get fname(){
+            return this._fname;
+        }
+
+        set fname(value){
+            this._fname = value;
+        }
+    }
+
+    /*
+        Note: For other declarations, like functions, you will NOT get an error when you try to use it before it is declared, because the default behavior of JavaScript declarations are hoisting (moving the declaration to the top).
+    */    
+</script>
