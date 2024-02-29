@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="op"></h1>
+</body>
+
+</html>
+
+<script>
+    /*  
+        callback function example with arrow function for filter positive values from array
+    */
+
+    function printer(value){
+        document.getElementById("op").innerHTML = value;
+    }
+
+    let myData = [11, -3, -35, 15, -56, 87, 90,-97, 89, -98, 767, 80, 67, -8];
+
+    let answer = removeNegative(myData, (value) => value >= 0);
+
+    printer(answer);
+
+    function removeNegative(values, callback){
+        let positiveNumbers = [];
+
+        for(x of values){
+            if(callback(x)){
+                positiveNumbers.push(x);
+            }
+        }
+
+        return positiveNumbers;
+    }
+
+</script>

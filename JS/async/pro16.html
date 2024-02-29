@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="op"></div>
+</body>
+
+</html>
+<script>
+
+    function printer(value) {
+        document.getElementById("op").innerHTML = value;
+    }
+
+    // producing code
+    let myPromise = new Promise(function (resolve, reject) {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "mydata.txt");
+        xmlHttp.send();
+
+        xmlHttp.onload = function () {
+            if (xmlHttp.status == 200) {
+                resolve(xmlHttp.responseText);
+            } else {
+                reject(xmlHttp.responseText);
+            }
+        }
+    });
+
+    // consuming code
+    myPromise.then((success) => {
+        printer(success);
+    }, (error) => {
+        printer(error)
+    });
+</script>
