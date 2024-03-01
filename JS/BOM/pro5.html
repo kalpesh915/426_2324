@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Object Model</title>
+</head>
+<body>
+    <button onclick="openwin()">Open Window</button>
+    <button onclick="closewin()">Close Window</button>
+    <button onclick="moveWin()">Move to</button>
+    <button onclick="resizeWin()">Resize to</button>
+</body>
+</html>
+
+<script>
+    let myWindow = null;
+
+    function openwin(){
+        myWindow = window.open("https://www.w3schools.com", "_blank", "height=300 width=300");
+        myWindow.focus();
+    }
+
+    function closewin(){
+        myWindow.close();
+    }
+
+    function moveWin(){
+        myWindow.moveTo(500, 500);
+        moveWin.focus();
+    }
+
+    function resizeWin(){
+        myWindow.resizeTo(300, 300);
+        moveWin.focus();
+    }
+</script>

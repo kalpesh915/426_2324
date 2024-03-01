@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="op"></div>
+</body>
+
+</html>
+<script>
+    /*
+        Await Syntax
+        The await keyword can only be used inside an async function.
+        The await keyword makes the function pause the execution and wait for a resolved promise before it continues:
+    */
+
+    async function greetings(){
+        let myPromise = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve("Welcome to world of async and await");
+            }, 5000);
+        });
+
+        document.getElementById("op").innerHTML = myPromise;
+    }
+
+    greetings();
+</script>
