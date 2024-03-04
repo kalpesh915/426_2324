@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Object Model</title>
+    <style>
+        .outer{
+            height: 500px;
+            width: 500px;
+            background-color: yellow;
+            position:relative;
+        }
+
+        .inner{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner" id="inner">
+        </div>
+    </div>
+    <hr>
+    <button onclick="startAnimation()">Start Animation</button>
+    <button onclick="stopAnimation()">Stop Animation</button>
+</body>
+</html>
+
+<script>
+    let inner = document.getElementById("inner");
+    let pos = 0;
+    let animation;
+
+    function startAnimation(){
+        animation = setInterval(moveInner, 100);
+    }
+
+    function moveInner(){
+        pos += 50;
+        inner.style.left = pos+"px";
+        inner.style.top = pos+"px";
+        if(pos >= 450){
+            stopAnimation();
+        }
+    }
+
+    function stopAnimation(){
+        clearInterval(animation);
+    }
+</script>

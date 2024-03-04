@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="createCookie()">Creare Cookies</button>
+    <button onclick="viewCookies()">View Cookies</button>
+    <button onclick="deleteCookies()">Delete Cookies</button>
+</body>
+</html>
+
+<script>
+    function createCookie(){
+        let username = prompt("Enter your Name");
+        document.cookie = "uname="+username+"; expires = 31 december 2024 23:59:59 GMT;";
+    }
+
+    function viewCookies(){
+        alert(document.cookie);
+    }
+
+    function deleteCookies(){
+        document.cookie = "uname=''; expires = 31 december 2000 23:59:59 GMT;";
+    }
+</script>

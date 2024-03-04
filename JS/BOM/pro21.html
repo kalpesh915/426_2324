@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Some Basic CSS for Car Race Game */
+        .img {
+            position: relative;
+            left: 0px;
+            height: 50px;
+            width: 100px;
+        }
+
+        .op {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <!-- put 2 cars on race track -->
+    <hr>
+    <img src="images/car1.gif" class="img" id="car1">
+    <hr>
+    <img src="images/car2.gif" class="img" id="car2">
+    <hr>
+    <button onclick="startRace()">Start Race</button>
+    <button onclick="pauseRace()">Pause Race</button>
+    <button onclick="restartGame()">Restart Race</button>
+    <button onclick="gearUp()">Gear Up</button>
+    <button onclick="gearDown()">Gear Down</button>
+    <hr>
+    <div class="op">
+        <!-- following h1 tag used to view race statastics -->
+        <h1 id="op1"></h1>
+        <h1 id="op2"></h1>
+        <h1 id="gearop"></h1>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // decalre rerquired variables for car race game
+    const car1 = document.getElementById("car1");
+    const car2 = document.getElementById("car2");
+    const op1 = document.getElementById("op1");
+    const op2 = document.getElementById("op2");
+    const gearop = document.getElementById("gearop");
+
+    let gear, diff, tmp, animation = undefined;
+
+    // following function are used to initlize game
+    function init() {
+        // set car on 0px before start of race
+        car1.style.left = "0px";
+        car2.style.left = "0px";
+
+        gear = 1;
+
+        // set statiscal values
+        op1.innerHTML = `Car 1 is on ${parseInt(car1.style.left)} Meters / 1200 Meters`;
+        op2.innerHTML = `Car 2 is on ${parseInt(car2.style.left)} Meters / 1200 Meters`;
+        gearop.innerHTML = `Car in Gear ${gear} `;
+    }
+
+    // functions for shiftig gear 
+    function gearUp() {
+        gear++;
+        if (gear > 5) {
+            gear = 5;
+        }
+    }
+
+    function gearDown() {
+        gear--;
+        if (gear < 1) {
+            gear = 1;
+        }
+    }
+
+    // logic for start race
+    function startRace() {
+        if (animation == undefined) {
+            animation = setInterval(moveCar, 100);
+        }
+    }
+
+    // logic for Move car forward
+    function moveCar() {
+        // generate random number for cars and move both cars position according to left 
+        tmp = Math.ceil((Math.random() * 10) * gear);
+        car1.style.left = (parseInt(car1.style.left) + tmp) + "px";
+
+        tmp = Math.ceil((Math.random() * 10) * gear);
+        car2.style.left = (parseInt(car2.style.left) + tmp) + "px";
+
+        // set statiscal values
+        op1.innerHTML = `Car 1 is on ${parseInt(car1.style.left)} Meters / 1200 Meters`;
+        op2.innerHTML = `Car 2 is on ${parseInt(car2.style.left)} Meters / 1200 Meters`;
+        gearop.innerHTML = `Car in Gear ${gear} `;
+
+        // code for checking winner cars
+        if (parseInt(car1.style.left) >= 1200) {
+            // count diffrence between both cars
+            diff = (parseInt(car1.style.left) - parseInt(car2.style.left));
+            alert("Car 1 is win By " + diff + " Meters");
+            resetGame();
+        }
+
+        if (parseInt(car2.style.left) >= 1200) {
+            // count diffrence between both cars
+            diff = (parseInt(car2.style.left) - parseInt(car1.style.left));
+            alert("Car 2 is win By " + diff + " Meters");
+            resetGame();
+        }
+    }
+
+    function resetGame() {
+        if (animation !== undefined) {
+            clearInterval(animation);
+            animation = undefined;
+        }
+
+        if (confirm("Do you want to play again ?")) {
+            window.location.reload();
+        } else {
+            alert("Thanks for Playing");
+        }
+    }
+
+    function pauseRace() {
+        if (animation !== undefined) {
+            clearInterval(animation);
+            animation = undefined;
+        }
+    }
+
+    function restartGame() {
+        if (animation !== undefined) {
+            clearInterval(animation);
+            animation = undefined;
+            if (confirm("are you sure to start new race ??")) {
+                window.location.reload();
+            } else {
+                animation = setInterval(moveCar, 100);
+            }
+        }
+    }
+</script>
