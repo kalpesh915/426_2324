@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1">
+        <input type="text" name="fname" id="fname" value="Smit"><br>
+        <input type="text" name="lname" id="lname" value="Vanzara"><br>
+        <input type="text" name="city" id="city" value="Jetpur"><br>
+    </form>
+</body>
+</html>
+
+<script>
+    let form1 = document.forms["form1"];
+
+    let op = "";
+
+    for(let i=0; i<form1.length; i++){
+        op += form1[i].name+" = "+form1[i].value+"\n";
+    }
+
+    alert(op);
+</script>

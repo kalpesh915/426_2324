@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1" onsubmit="return validateForm()">
+        <label for="age">Enter Your Age</label>
+        <input type="text" name="age" id="age">
+        <input type="submit" value="Send Data">
+    </form>
+</body>
+</html>
+
+<script>
+    function validateForm(){
+        let age = document.forms["form1"]["age"].value;
+
+        if(age == ""){
+            alert("Please Enter Age");
+            return false;
+        }else{
+            if(isNaN(age)){
+                alert("Invalid Age");
+                return false;
+            }else{
+                age = Number(age);
+
+                if(age >= 18 && age <= 100){
+                    return true;
+                }else{
+                    alert("Age outside of Range");
+                    return false;
+                }
+            }
+        }
+    }
+</script>

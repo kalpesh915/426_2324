@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body onmousemove="getPointer(event)">
+    <h1 id="op">Welcome</h1>
+</body>
+</html>
+
+<script>
+    const op = document.getElementById("op");
+    function getPointer(event){
+        //op.innerHTML = "X = "+event.clientX+" Y = "+event.clientY;
+        op.style.left = event.clientX+"px";
+        op.style.top = event.clientY+"px";
+    }
+</script>

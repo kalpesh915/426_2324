@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1" onsubmit="return validateForm()">
+        <label for="fname">Enter First Name</label>
+        <input type="text" name="fname" id="fname">
+        <input type="submit" value="Send Data">
+    </form>
+</body>
+</html>
+
+<script>
+    function validateForm(){
+        if(document.forms["form1"]["fname"].value == ""){
+            alert("Please Enter First Name");
+            return false;
+        }else{
+            return true;
+        }
+    }
+</script>
