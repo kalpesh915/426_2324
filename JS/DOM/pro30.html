@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Click Me</button>
+    <hr>
+    <button onclick="addEvent()">Add Event</button>
+</body>
+
+</html>
+
+<script>
+    function addEvent() {
+        //document.getElementById("btn1").addEventListener("click", printTime("Smit"));
+        document.getElementById("btn1").addEventListener("click", function () {
+            printTime("Smit");
+        });
+    }
+
+    function printTime(username) {
+        alert("Welcome " + username + " Time is " + Date());
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv{
+            border: 5px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet reiciendis voluptatibus ipsum suscipit vero nulla velit provident? Qui, ducimus? Molestiae, qui ad? Laudantium nihil voluptates, odit voluptatibus rem dolor ratione!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet reiciendis voluptatibus ipsum suscipit vero nulla velit provident? Qui, ducimus? Molestiae, qui ad? Laudantium nihil voluptates, odit voluptatibus rem dolor ratione!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet reiciendis voluptatibus ipsum suscipit vero nulla velit provident? Qui, ducimus? Molestiae, qui ad? Laudantium nihil voluptates, odit voluptatibus rem dolor ratione!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet reiciendis voluptatibus ipsum suscipit vero nulla velit provident? Qui, ducimus? Molestiae, qui ad? Laudantium nihil voluptates, odit voluptatibus rem dolor ratione!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet reiciendis voluptatibus ipsum suscipit vero nulla velit provident? Qui, ducimus? Molestiae, qui ad? Laudantium nihil voluptates, odit voluptatibus rem dolor ratione!</p>    
+</body>
+
+</html>
+
+<script>
+    let ptags = document.querySelectorAll("p");
+    //alert(ptags);
+    alert(ptags.length);
+    for(let x = 0; x < ptags.length; x++){
+        ptags[x].style.color = 'red';
+    }
+</script>
