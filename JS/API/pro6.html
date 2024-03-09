@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Example of Session Storage</h1>
+
+    <button onclick="addFN()">Add First Name</button>
+    <button onclick="addLN()">Add Last Name</button>
+    <button onclick="getData()">get Data</button>
+    <button onclick="countData()">Count Data</button>
+    <button onclick="removeFN()">Remove First name</button>
+    <button onclick="removeLN()">Remove Last name</button>
+    <button onclick="removeAll()">Remove All Data</button>
+    <button onclick="updateData()">Update Data</button>
+</body>
+
+</html>
+
+<script>
+    /*
+       The sessionStorage Object
+       The sessionStorage object is identical to the localStorage object.
+       The difference is that the sessionStorage object stores data for one session.
+       The data is deleted when the browser is closed.
+    */
+
+    function addFN() {
+        let fname = prompt("Enter First Name");
+        sessionStorage.setItem("fname", fname);
+    }
+
+    function addLN() {
+        let lname = prompt("Enter Last Name");
+        sessionStorage.setItem("lname", lname);
+    }
+
+    function getData(){
+        alert("Welcome "+sessionStorage.getItem("fname")+" "+sessionStorage.getItem("lname"));
+    }
+
+    function countData() {
+        alert("Total Data in Storage is "+sessionStorage.length);
+    }
+
+    function removeFN(){
+        sessionStorage.removeItem("fname");
+    }
+
+    function removeLN(){
+        sessionStorage.removeItem("lname");
+    }
+
+    function removeAll(){
+        sessionStorage.clear();
+    }
+
+    function updateData(){
+        let fname = prompt("Enter First Name");
+        let lname = prompt("Enter Last Name");
+
+        sessionStorage.setItem("fname", fname);
+        sessionStorage.setItem("lname", lname);
+    }
+</script>

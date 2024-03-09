@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getLocation()">Get Location</button>
+    <hr>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    let op = document.getElementById("op");
+
+    function getLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(printer, printErros);
+        }else{
+            op.innerHTML = "Geo Location not Supported";
+        }
+    }
+
+    function printer(currentLocation){
+        //op.innerHTML = "Latitude : "+currentLocation.coords.latitude+" Longitude : "+currentLocation.coords.longitude;
+        op.innerHTML = `<a href="https://maps.google.com/?q=${currentLocation.coords.latitude},${currentLocation.coords.longitude}">View Your Current Location</a>`;
+    }
+
+    function printErros(errors){
+        //alert(errors.code);
+        switch(errors.code){
+            case errors.PERMISSION_DENIED:{
+                op.innerHTML = "User denied the request for Geolocation.";
+                break;
+            }
+            case errors.POSITION_UNAVAILABLE:{
+                op.innerHTML = "Location information is unavailable.";
+                break;
+            }
+            case errors.TIMEOUT:{
+                op.innerHTML = "The request to get user location timed out.";
+                break;
+            }
+            case errors.UNKNOWN_ERROR:{
+                op.innerHTML = "An unknown error occurred.";
+                break;
+            }
+        }
+    }
+</script>

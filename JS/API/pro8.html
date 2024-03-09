@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Example of Web Worker</h1>
+    <h1 id="op"></h1>
+    <hr>
+    <button onclick="startWork()">Start Work</button>
+    <button onclick="stopWork()">Stop Work</button>
+</body>
+
+</html>
+
+<script>
+    /*
+       What is a Web Worker?
+       When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
+       A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background.
+    */
+
+    let myWorker = null;
+    const op = document.getElementById("op");
+    function startWork(){
+        if(myWorker === null){
+            myWorker = new Worker("myWorkerFile1.js");
+        }
+
+        myWorker.onmessage = function(event){
+            op.innerHTML = event.data;
+        }
+    }
+
+    function stopWork(){
+        myWorker.terminate();
+        myWorker = null;
+    }
+</script>
