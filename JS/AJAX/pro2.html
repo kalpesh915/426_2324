@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">Read File Data</button>
+    <hr>
+    <div id="op"></div>
+</body>
+</html>
+
+<script>
+    const op = document.getElementById("op");
+
+    /*
+        The XMLHttpRequest object can be used to exchange data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
+    */ 
+
+    function getData(){
+        // create object of XMLHttpRequest
+        const xmlHttp = new XMLHttpRequest();
+
+        /* 
+            To send a request to a server, you can use the open() and send() methods of the XMLHttpRequest object:
+            open(HTTP_METHOD, Server Address / File Name, Asynchronus)
+        */
+        xmlHttp.open("GET","data.txt", true);
+
+        // user to send request on opened connection
+        xmlHttp.send();
+
+        /*
+            Define a Callback Function
+            A callback function is a function passed as a parameter to another function.
+            In this case, the callback function should contain the code to execute when the response is ready.
+
+            when XmlHttp request load it will call anonymus function every time
+
+            we need to check xmlHttp response status if we recieve ststus code to 200 then our request successfully resolved
+        */
+        xmlHttp.onload = function(){
+            if(xmlHttp.status == 200){
+                // print received text in response to op element 
+                op.innerHTML = xmlHttp.responseText;
+                //alert(xmlHttp.responseText);
+                //alert(xmlHttp.status)
+                alert(xmlHttp.responseType);
+            }
+        }
+    }
+</script>

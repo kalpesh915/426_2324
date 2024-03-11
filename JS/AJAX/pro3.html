@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">Read File Data</button>
+    <hr>
+    <div id="op"></div>
+</body>
+</html>
+
+<script>
+    const op = document.getElementById("op");
+
+    /*
+        The XMLHttpRequest object can be used to exchange data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
+    */ 
+
+    function getData(){
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET","data.txt", true);
+        xmlHttp.send();
+
+        xmlHttp.onload = function(){
+            if(xmlHttp.status == 200){
+                op.innerHTML = xmlHttp.responseText;
+                //console.log(xmlHttp.getAllResponseHeaders());
+                console.log(xmlHttp.getResponseHeader("content-length"));
+            }
+        }
+    }
+</script>

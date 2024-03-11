@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">Read File Data</button>
+    <hr>
+    <div id="op"></div>
+</body>
+</html>
+
+<script>
+    const op = document.getElementById("op");
+
+    /*
+        read all the products from 
+        https://dummyjson.com/products and print on console
+    */ 
+
+    function getData(){
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "https://dummyjson.com/products", true);
+        xmlHttp.send();
+
+        xmlHttp.onreadystatechange = function(){
+            if(xmlHttp.status == 200 && xmlHttp.readyState == 4){
+                //console.log(xmlHttp.responseText);
+                op.innerHTML = xmlHttp.responseText;
+            }
+        }
+    }
+</script>

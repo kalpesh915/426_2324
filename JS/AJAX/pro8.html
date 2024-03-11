@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            overflow: auto;
+        }
+
+        table {
+            width: 100%;
+            padding: 2px;
+            box-sizing: border-box;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        .productimage{
+            height: 50px;
+            width: 50px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="getData()">Load Products</button>
+    <hr>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Rating</th>
+                    <th>Stock</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+
+            <tbody id="data">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const data = document.getElementById("data");
+
+    /*
+        read all the products from with fetch API
+        https://dummyjson.com/products and print on console
+    */
+
+    function getData() {
+        let products = ``;
+        fetch("https://dummyjson.com/products").then((response)=>{
+            response.json().then((result)=>{
+                //console.log(result.products);
+                for(let product of result.products){
+                    //console.log(product);
+                    products += `<tr>
+                        <td>${product.id}</td>
+                        <td>${product.title}</td>
+                        <td>${product.description}</td>
+                        <td>${product.price}</td>
+                        <td>${product.discountPercentage}</td>
+                        <td>${product.rating}</td>
+                        <td>${product.stock}</td>    
+                        <td>${product.brand}</td>
+                        <td>${product.category}</td>
+                        <td><img src='${product.thumbnail}' class='productimage'></td>
+                    </tr>`;
+                }
+                data.innerHTML = products;
+            })
+        });
+    }
+</script>
