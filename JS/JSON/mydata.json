@@ -1,0 +1,7 @@
+{
+    "fname" : "Smit",
+    "lname" : "Vanzara",
+    "city" : "Rajkot",
+    "education" : "MCA",
+    "marks" : [11, 22, 33, 44, 55]
+}

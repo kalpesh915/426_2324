@@ -1,0 +1,27 @@
+{
+    "students" : [
+        {
+            "roll":1,
+            "fname": "Smit",
+            "lname" :"Vanzar"
+        },
+        {
+            "roll":1,
+            "fname": "Smit",
+            "lname" :"Vanzar"
+        },{
+            "roll":1,
+            "fname": "Smit",
+            "lname" :"Vanzar"
+        },{
+            "roll":1,
+            "fname": "Smit",
+            "lname" :"Vanzar"
+        },{
+            "roll":1,
+            "fname": "Smit",
+            "lname" :"Vanzar"
+        }
+
+    ]
+}

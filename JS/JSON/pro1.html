@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Multipurpose Internet Mail Extensions (MIME) -->
+</body>
+
+</html>
+
+<script>
+    const JSONData = `{
+        "employees": [
+            { "firstName": "John", "lastName": "Doe" },
+            { "firstName": "Anna", "lastName": "Smith" },
+            { "firstName": "Peter", "lastName": "Jones" }
+        ]
+    }`;
+
+
+    document.write(JSONData);
+
+    // parse function used to convert JSON String into JS Object
+    const JSObjectData = JSON.parse(JSONData);
+    document.write("<hr>"+JSObjectData);
+    console.log(JSObjectData);
+</script>
