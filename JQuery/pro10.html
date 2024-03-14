@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <!-- 
+        CDN for JQuery
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     -->
+
+     <script>
+        // following code will be triggerd when document is fully loaded
+        $(document).ready(()=>{
+            $("p").hide(3000);
+        })
+        
+     </script>
+</head>
+
+<body>
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+    <hr>
+    <p>Simple Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente praesentium nam nesciunt cumque? Eum ipsum quisquam temporibus fugit amet nemo nulla quod veniam ducimus cum, assumenda cupiditate non vel quaerat.</p>
+    <p class="demo">Class Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam itaque ea harum sint animi dolorem dolore dolorum! Corrupti debitis, fugiat doloribus cupiditate assumenda sequi sapiente sint reiciendismolestias porro repellendus?</p>
+    <p id="demo">ID Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quisquam excepturi voluptasinventore similique animi molestiae placeat assumenda exercitationem vitae impedit delectus laborum, repellat dolorum autem dicta perspiciatis deleniti fugit.</p>
+</body>
+
+</html>
+
+<script>
+    // code without document.ready()
+    //$("p").hide(3000);
+</script>

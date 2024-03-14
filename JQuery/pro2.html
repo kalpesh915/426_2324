@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <!-- 
+        CDN for JQuery
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     -->
+</head>
+<body>
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+    <hr>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quas facere, fuga sequi inventore explicabo cumque corporis, est modi dolorum repellendus exercitationem reiciendis! Nam fugiat dolores illum, quod consequatur pariatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, esse. Odit quam ipsum totam, temporibus iste facilis, numquam quibusdam unde officia illo ratione, doloribus eum dicta dolore necessitatibus autem ducimus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt quisquam ullam ratione alias, cum odio sapiente pariatur molestiae, culpa libero. Ab nemo facilis sed iure placeat at delectus consequuntur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam unde, accusamus doloremque inventore voluptatem voluptas vero similique. Amet dolore rerum, delectus, nulla voluptas, in enim cum animi totam optio dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa tenetur architecto a minima fuga eius earum quasi non quod nobis rem doloremque veniam accusamus officiis, dicta et corporis distinctio ut.</p>
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("p").hide(3000);
+        });
+
+        $("#btn2").click(function(){
+            $("p").show(3000);
+        });
+    });
+</script>
