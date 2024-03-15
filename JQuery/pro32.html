@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+</head>
+
+<body>
+    <button id="btn1">Fade Out</button>
+    <button id="btn2">Fade In</button>
+    <button id="btn3">Fade Toggle</button>
+    <hr>
+    <p id="op">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, nisi voluptate! Mollitia, doloremque aut blanditiis minima quod iusto aliquid eaque impedit ullam facere laborum consectetur! Debitis adipisci eos facere cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sapiente ad inventore, voluptatem temporibus eaque fugit voluptate tempore quibusdam deserunt iste corrupti ullam voluptas qui provident dolor nemo quos repellat? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam nobis magni ea corporis adipisci provident facilis totam dolores eum dignissimos officia consequatur animi, nihil, impedit esse accusamus quos cumque tenetur.</p>
+</body>
+
+</html>
+
+<script>
+  
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#op").fadeOut(3000);
+        });
+
+        $("#btn2").click(function(){
+            $("#op").fadeIn(3000);
+        });
+
+        $("#btn3").click(function(){
+            $("#op").fadeToggle(5000);
+        });
+    });
+</script>

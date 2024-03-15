@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+</head>
+
+<body>
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+    <hr>
+    <p>Simple Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente praesentium nam nesciunt cumque? Eum ipsum quisquam temporibus fugit amet nemo nulla quod veniam ducimus cum, assumenda cupiditate non vel quaerat.</p>
+    <p class="demo">Class Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam itaque ea harum sint animi dolorem dolore dolorum! Corrupti debitis, fugiat doloribus cupiditate assumenda sequi sapiente sint reiciendismolestias porro repellendus?</p>
+    <p id="demo">ID Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quisquam excepturi voluptasinventore similique animi molestiae placeat assumenda exercitationem vitae impedit delectus laborum, repellat dolorum autem dicta perspiciatis deleniti fugit.</p>
+    <h1 class="demo">Welcome to jquery</h1>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("p:first").hide(2000); 
+        });
+
+        $("#btn2").click(function(){
+            $("p:first").show(2000);
+        });
+    });
+</script>

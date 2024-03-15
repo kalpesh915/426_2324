@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #op{
+            background-color: yellow;
+            color: red;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Run Animation</button>
+    <hr>
+    <p id="op">Welcome to jquery</p>
+</body>
+
+</html>
+
+<script>
+  
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#op").animate({
+                "left" : "200px",
+                "color" : "white",
+                "background-color" : "black",
+                "font-size" : "40px",
+                "width" : "toggle"
+            }, 2000);
+        });        
+    });
+</script>
