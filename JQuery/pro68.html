@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .demo{
+            background-color: yellow;
+            color: red;
+            border: 1px solid black;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            left: 0px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Get CSS</button>
+    <button id="btn2">Set CSS</button>
+    <hr>
+    <div id="op" class="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit in aliquam nihil perspiciatis incidunt est, deleniti expedita voluptas laudantium similique natus quas itaque delectus illum, quia quam consequuntur perferendis alias? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit in aliquam nihil perspiciatis incidunt est, deleniti expedita voluptas laudantium similique natus quas itaque delectus illum, quia quam consequuntur perferendis alias?</div>
+</body>
+
+</html>
+
+<script>
+    /*
+        Set Multiple CSS Properties
+        To set multiple CSS properties, use the following syntax:
+        css({"propertyname":"value","propertyname":"value",...});
+    */  
+
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            alert($("#op").css("padding"));
+        });
+
+        $("#btn2").click(function(){
+            $("#op").css({
+                "padding": "50px",
+                "background-color" : "purple",
+                "color" : "white",
+                "opacity" : "0.5"
+            });
+        });
+    });
+</script>

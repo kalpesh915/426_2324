@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #op{
+            background-color: yellow;
+            color: red;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Run Animation</button>
+    <button id="btn2">Stop Animation</button>
+    <hr>
+    <p id="op">Welcome to jquery</p>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery - Chaining
+        With jQuery, you can chain together actions/methods. Chaining allows us to run multiple jQuery methods (on the same element) within a single statement.
+        
+        jQuery Method Chaining
+        Until now we have been writing jQuery statements one at a time (one after the other). However, there is a technique called chaining, that allows us to run multiple jQuery commands, one after the other, on the same element(s).
+    */   
+    $(document).ready(function(){
+        const op = $("#op");
+        $("#btn1").click(function(){
+            op.slideUp(1000)
+            .slideDown(3000)
+            .fadeOut(500)
+            .fadeIn(5000)
+            .hide(2000)
+            .show(100);
+        });        
+
+        $("#btn2").click(function(){
+            op.stop(true, true); // stop all running and upcoming Animations
+        });
+    });
+</script>

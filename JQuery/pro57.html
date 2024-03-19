@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #op{
+            border: 1px solid black;
+            padding: 2px;
+            width: 100%;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Prepend</button>
+    <button id="btn2">Append</button>
+    <hr>
+    <div id="op">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit in aliquam nihil perspiciatis incidunt est, deleniti expedita voluptas laudantium similique natus quas itaque delectus illum, quia quam consequuntur perferendis alias?</div>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery - Add Elements
+        With jQuery, it is easy to add new elements/content.
+
+        Add New HTML Content : We will look at four jQuery methods that are used to add new content:
+        append() - Inserts content at the end of the selected elements
+        prepend() - Inserts content at the beginning of the selected elements
+    */  
+
+    $(document).ready(function(){
+        const op = $("#op");
+        $("#btn1").click(function(){
+            op.prepend("Welcome ");
+        });
+        $("#btn2").click(function(){
+            op.append("Welcome ");
+        });
+    });
+</script>

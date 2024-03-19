@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #op{
+            border: 1px solid black;
+            padding: 2px;
+            width: 100%;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="op">Welcome to jquery</p>
+    <button id="btn1">Set New Text</button>
+</body>
+
+</html>
+
+<script>
+    /*
+    */   
+    $(document).ready(function(){
+        const op = $("#op");
+        $("#btn1").click(function(){
+            op.text(function(index, oldText){
+                console.log(oldText);
+                return oldText + " Some other Text";
+            });
+        });
+    });
+</script>

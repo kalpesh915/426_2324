@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #op{
+            border: 1px solid black;
+            padding: 2px;
+            width: 300px;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="password" id="op" name="op"> <button id="btn1">show</button>
+</body>
+
+</html>
+
+<script>
+    /*
+    */   
+    $(document).ready(function(){
+        const op = $("#op");
+        $("#btn1").mouseover(function(){
+            op.attr("type", "text");
+            alert(op.attr("type"));
+        });
+        $("#btn1").mouseout(function(){
+            op.attr("type", "password");
+            alert(op.attr("type"));
+        });
+    });
+</script>

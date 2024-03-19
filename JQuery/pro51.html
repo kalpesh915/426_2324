@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #op{
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="op">Welcome to World of <b>Scripting</b> with jQuery</p>
+    <hr>
+    <button id="btn1">Get Text</button>
+    <button id="btn2">Get HTML</button>
+    <button id="btn3">Set Text</button>
+    <button id="btn4">Set HTML</button>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery contains powerful methods for changing and manipulating HTML elements and attributes.jQuery DOM Manipulation One very important part of jQuery is the possibility to manipulate the DOM. 
+        jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate elements and attributes.
+
+
+    */   
+    $(document).ready(function(){
+        const op = $("#op");
+        $("#btn1").click(function(){
+            // get text
+            alert(op.text());
+        });        
+
+        $("#btn2").click(function(){
+            // get Html
+            alert(op.html());
+        });
+
+        $("#btn3").click(function(){
+            // set text
+            op.text("This is New Text");
+        });        
+
+        $("#btn4").click(function(){
+            // set Html
+            op.html("This is <u>New</u> Text");
+        });
+
+    });
+</script>

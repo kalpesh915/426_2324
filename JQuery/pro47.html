@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #op{
+            background-color: yellow;
+            color: red;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Run Animation</button>
+    <button id="btn2">Stop Animation</button>
+    <hr>
+    <p id="op">Welcome to jquery</p>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery Callback Functions
+        JavaScript statements are executed line by line. However, with effects, the next line of code can be run even though the effect is not finished. This can create errors.
+    */   
+    $(document).ready(function(){
+        const op = $("#op");
+        $("#btn1").click(function(){
+            op.animate({"left" : "500px"}, 10000, function(){
+                alert("Animation Completed"); // callback code
+            });
+        });        
+
+        $("#btn2").click(function(){
+            op.stop(true, true); // stop all running and upcoming Animations
+        });
+    });
+</script>

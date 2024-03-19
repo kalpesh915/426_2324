@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .demo{
+            background-color: yellow;
+            color: red;
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border: 10px solid black;
+            margin: 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Get Height / Width</button>
+    <button id="btn2">Get Inenr Height / Width</button>
+    <button id="btn3">Get Outer Height / Width</button>
+    <button id="btn4">Get Outer(true) Height / Width</button>
+    <hr>
+    <div id="op" class="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit in aliquam nihil perspiciatis incidunt est, deleniti expedita voluptas laudantium similique natus quas itaque delectus illum, </div>
+    <hr>
+
+    <h1 id="result"></h1>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery - Dimensions
+        With jQuery, it is easy to work with the dimensions of elements and browser window.
+        jQuery Dimension Methods
+
+        jQuery has several important methods for working with dimensions:
+        width(), height(), innerWidth(), innerHeight(), outerWidth(), outerHeight()
+    */  
+
+    $(document).ready(function(){
+        const op = $("#op");
+        const result = $("#result");
+
+        $("#btn1").click(function(){
+            result.text("Height is "+op.height()+ " Width is : "+op.width());
+            // 300 x 300 (orignal width and height of element)
+        });
+
+        $("#btn2").click(function(){
+            result.text("Height is "+op.innerHeight()+ " Width is : "+op.innerWidth());
+            // 340 x 340 (orignal width and height of element + padding of 20px both side)
+        });
+
+        $("#btn3").click(function(){
+            result.text("Height is "+op.outerHeight()+ " Width is : "+op.outerWidth());
+            // 340 x 340 (orignal width and height of element + padding of 20px both side + border of 10px each side)
+        });
+
+        $("#btn4").click(function(){
+            result.text("Height is "+op.outerHeight(true)+ " Width is : "+op.outerWidth(true));
+            // 340 x 340 (orignal width and height of element + padding of 20px both side + border of 10px each side + Margin also)
+        });
+    });
+</script>

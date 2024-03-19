@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .demo{
+            background-color: yellow;
+            color: red;
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border: 10px solid black;
+            margin: 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">set Height / Width</button>
+    <hr>
+    <div id="op" class="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit in aliquam nihil perspiciatis incidunt est, deleniti expedita voluptas laudantium similique natus quas itaque delectus illum, </div>
+    <hr>
+
+    <h1 id="result"></h1>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery - Dimensions
+        With jQuery, it is easy to work with the dimensions of elements and browser window.
+        jQuery Dimension Methods
+
+        jQuery has several important methods for working with dimensions:
+        width(), height(), innerWidth(), innerHeight(), outerWidth(), outerHeight()
+    */  
+
+    $(document).ready(function(){
+        const op = $("#op");
+        const result = $("#result");
+
+        $("#btn1").click(function(){
+           op.height(400).width(400);
+        });
+
+       
+    });
+</script>
