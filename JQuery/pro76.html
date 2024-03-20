@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 1px solid gray;
+            color: gray;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ancestors">
+        <div>
+            DIV great-grandparent
+            <ul>
+                UL Grandparent
+                <li>
+                    LI Parent Element
+                    <span>
+                        Span Child Element
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            Div Grandparent
+            <p>
+                P Parent Element
+                <span>Span Child Element</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery Traversing - Descendants
+        With jQuery you can traverse down the DOM tree to find descendants of an element.
+        A descendant is a child, grandchild, great-grandchild, and so on.
+
+        Traversing Down the DOM Tree
+
+        Two useful jQuery methods for traversing down the DOM tree are:
+
+        children()
+        find()
+
+        jQuery children() Method
+        The children() method returns all direct children of the selected element. This method only traverses a single level down the DOM tree.
+    */
+    $(document).ready(function () {
+       //$(".ancestors").children().css("border", "5px solid red");
+       $("ul").children().css("border", "5px solid red");
+    });
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 1px solid gray;
+            color: gray;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ancestors">
+        <div>
+            DIV great-grandparent
+            <ul>
+                UL Grandparent
+                <li>
+                    LI Parent Element
+                    <span>
+                        Span Child Element
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            Div Grandparent
+            <p>
+                P Parent Element
+                <span>Span Child Element</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery parentsUntil() Method
+        The parentsUntil() method returns all ancestor elements between two given arguments.
+    */
+    $(document).ready(function () {
+       $("span").parentsUntil("div").css("border", "5px solid red");
+    });
+</script>

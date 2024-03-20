@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 1px solid gray;
+            color: gray;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ancestors">
+        <div>
+            DIV great-grandparent
+            <ul>
+                UL Grandparent
+                <li>
+                    LI Parent Element
+                    <span>
+                        Span Child Element
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            Div Grandparent
+            <p>
+                P Parent Element
+                <span>Span Child Element</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    /*
+        What is Traversing?
+        jQuery traversing, which means "move through", are used to "find" (or select) HTML elements based on their relation to other elements. Start with one selection and move through that selection until you reach the elements you desire.
+
+        jQuery Traversing - Ancestors : An ancestor is a parent, grandparent, great-grandparent, and so on.
+
+        Traversing Up the DOM Tree
+
+        Three useful jQuery methods for traversing up the DOM tree are:
+
+        parent()
+        parents()
+        parentsUntil()
+
+    */
+    $(document).ready(function () {
+       $("span").parent().css("border", "5px solid red");
+    });
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <h1>This is Heading 1</h1>
+    <h2>This is Heading 2</h2>
+    <h3>This is Heading 3</h3>
+    <h4>This is Heading 4</h4>
+    <h5>This is Heading 5</h5>
+    <h6>This is Heading 6</h6>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum suscipit quasi quos nesciunt modi. Quo culpa quaerat reiciendis velit voluptates similique obcaecati necessitatibus. Quibusdam beatae error nihil! Ex, magnam ullam!</p>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery Traversing - Siblings
+        With jQuery you can traverse sideways in the DOM tree to find siblings of an element.Siblings share the same parent. 
+        Traversing Sideways in The DOM Tree
+
+        There are many useful jQuery methods for traversing sideways in the DOM tree:
+
+        siblings()
+        next()
+        nextAll()
+        nextUntil()
+        prev()
+        prevAll()
+        prevUntil()
+
+        jQuery siblings() Method
+        The siblings() method returns all sibling elements of the selected element.
+    */
+    $(document).ready(function () {
+       $("h3").siblings("p").css("color", "red");
+    });
+</script>

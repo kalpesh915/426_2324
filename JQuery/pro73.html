@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 1px solid gray;
+            color: gray;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ancestors">
+        <div>
+            DIV great-grandparent
+            <ul>
+                UL Grandparent
+                <li>
+                    LI Parent Element
+                    <span>
+                        Span Child Element
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            Div Grandparent
+            <p>
+                P Parent Element
+                <span>Span Child Element</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery parents() Method
+        The parents() method returns all ancestor elements of the selected element, all the way up to the document's root element (<html>).
+        The following example returns all ancestors of all <span> elements:
+    */
+    $(document).ready(function () {
+       $("span").parents().css("border", "5px solid red");
+    });
+</script>

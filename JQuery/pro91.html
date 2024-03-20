@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .demo{
+            background-color: yellow;
+            color: red;
+        }    
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis, perspiciatis voluptatibus doloribus, tempora deleniti porro nobis, ipsum quod consequatur iste ea asperiores vitae mollitia nihil animi repudiandae commodi adipisci.</p>
+    <p class="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis, perspiciatis voluptatibus doloribus, tempora deleniti porro nobis, ipsum quod consequatur iste ea asperiores vitae mollitia nihil animi repudiandae commodi adipisci.</p>
+    <p class="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis, perspiciatis voluptatibus doloribus, tempora deleniti porro nobis, ipsum quod consequatur iste ea asperiores vitae mollitia nihil animi repudiandae commodi adipisci.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis, perspiciatis voluptatibus doloribus, tempora deleniti porro nobis, ipsum quod consequatur iste ea asperiores vitae mollitia nihil animi repudiandae commodi adipisci.</p>
+    <p class="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis, perspiciatis voluptatibus doloribus, tempora deleniti porro nobis, ipsum quod consequatur iste ea asperiores vitae mollitia nihil animi repudiandae commodi adipisci.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis, perspiciatis voluptatibus doloribus, tempora deleniti porro nobis, ipsum quod consequatur iste ea asperiores vitae mollitia nihil animi repudiandae commodi adipisci.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis, perspiciatis voluptatibus doloribus, tempora deleniti porro nobis, ipsum quod consequatur iste ea asperiores vitae mollitia nihil animi repudiandae commodi adipisci.</p>
+</body>
+</html>
+
+<script>
+    /*
+        jQuery filter() Method
+        The filter() method lets you specify a criteria. Elements that do not match the criteria are removed from the selection, and those that match will be returned.
+    */
+    $(document).ready(function () {
+       $("p").filter(".demo").css({"color": "white", "background-color":"black"});
+    });
+</script>

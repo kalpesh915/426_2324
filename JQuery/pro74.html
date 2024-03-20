@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 1px solid gray;
+            color: gray;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ancestors">
+        <div>
+            DIV great-grandparent
+            <ul>
+                UL Grandparent
+                <li>
+                    LI Parent Element
+                    <span>
+                        Span Child Element
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            Div Grandparent
+            <p>
+                P Parent Element
+                <span>Span Child Element</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery parents() Method
+        You can also use an optional parameter to filter the search for ancestors.
+    */
+    $(document).ready(function () {
+       $("span").parents("div").css("border", "5px solid red");
+    });
+</script>
