@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #data{
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+   <button id="btn1">Load Data</button>
+   <hr>
+   
+   <div id="data"></div>
+</body>
+</html>
+
+<script>
+    /*
+        The jQuery get() and post() methods are used to request data from the server with an HTTP GET or POST request.
+
+        HTTP Request: GET vs. POST
+
+        Two commonly used methods for a request-response between a client and server are: GET and POST.
+        GET - Requests data from a specified resource
+        POST - Submits data to be processed to a specified resource
+
+        GET is basically used for just getting (retrieving) some data from the server. Note: The GET method may return cached data.
+        POST can also be used to get some data from the server. However, the POST method NEVER caches data, and is often used to send data along with the request.
+
+        jQuery $.get() Method
+        The $.get() method requests data from the server with an HTTP GET request.
+    */ 
+    $(document).ready(function ($) {
+        $("#btn1").click(function(){
+            $.get("data.txt", (data, status)=>{
+                //alert(data);
+                //alert(status);
+                $("#data").html(data);
+            });
+        });
+    });
+</script>

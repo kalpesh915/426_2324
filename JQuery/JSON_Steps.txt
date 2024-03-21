@@ -1,0 +1,17 @@
+1   Open consol window in VS Code (Press Ctrl + j)
+2   make sure active internet connection
+3   open browser and install Node js 
+4   in consol window type npm install json-server
+5   wait for complete the installation
+6   create new jsonfile name (yourfilename.json)
+7   open newly created file with json-server
+8   enter following command in consol window
+    json-server yourfilename.json
+9   open browser and type localhost:3000
+10  open yourfilename.json file in editor
+11  create new API in yourfilename.json 
+    {
+        "students" : [
+            
+        ]
+    }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+</head>
+<body>
+   <button id="btn1">Hide / Show</button>
+   <hr>
+   <p id="op">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolores repellat officiis sint! Sapiente rem animi repellat maiores error dolorum inventore deleniti blanditiis obcaecati repudiandae? Laboriosam amet soluta fugit voluptatibus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ad nisi magni nobis. Vitae alias optio cumque? Nesciunt dicta magni optio, alias perferendis harum consectetur. Repellendus in quisquam esse suscipit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis magni vel dicta ipsam culpa, non officiis nobis vero? Voluptatibus, sint. Enim ab pariatur recusandae provident adipisci corrupti minima reprehenderit dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nihil obcaecati magni sapiente. Temporibus necessitatibus deserunt aut id itaque rerum placeat sunt, explicabo aspernatur quo illo odio, totam quas provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione libero quas commodi ad corporis. Sequi nulla doloribus ipsum quibusdam provident mollitia eum itaque aliquam tempora? Pariatur nisi enim qui optio!</p>
+</body>
+</html>
+
+<script>
+    /*  
+        If you have a block of jQuery code which uses the $ shortcut and you do not want to change it all, you can pass the $ sign in as a parameter to the ready method. This allows you to access jQuery using $, inside this function - outside of it, you will have to use "jQuery":
+    */
+    
+    $.noConflict();
+    jQuery(document).ready(function ($) {
+        $("#btn1").click(function(){
+            $("#op").toggle(3000);
+        });
+    });
+</script>

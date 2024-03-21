@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+
+</head>
+
+<body>
+    <button id="btn1">Add New Data</button>
+</body>
+
+</html>
+
+<script>
+    /*
+        jQuery $.post() Method
+        The $.post() method requests data from the server using an HTTP POST request.
+        Syntax :    $.post(URL,data,callback);
+        The required URL parameter specifies the URL you wish to request. The optional data parameter specifies some data to send along with the request. The optional callback parameter is the name of a function to be executed if the request succeeds.
+    */
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            let fname = prompt("Enter First Name");
+            let lname = prompt("Enter Last Name");
+            let city = prompt("Enter City");
+
+            $.post("http://localhost:3000/students", JSON.stringify({fname, lname, city}), (data, status) => {
+                alert("Data is " + data + " Status is " + status);
+            });
+        });
+    });
+</script>

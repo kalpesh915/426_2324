@@ -1,0 +1,21 @@
+{
+  "students": [
+    {
+      "fname": "Hensi",
+      "lname": "Lambiya",
+      "city": "Rajkot"
+    },
+    {
+      "id": "d390",
+      "fname": "hemal",
+      "lname": "varu",
+      "city": "amreli"
+    },
+    {
+      "id": "b8b8",
+      "fname": "aryan",
+      "lname": "thakar",
+      "city": "rajkot"
+    }
+  ]
+}

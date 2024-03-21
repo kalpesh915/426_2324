@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+    <style>
+        #data{
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+   <button id="btn1">Load Data</button>
+   <hr>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem soluta odit minima. Totam error aliquam dolorum nostrum ut nesciunt, suscipit magnam fuga sapiente est quibusdam eligendi reiciendis, sequi alias excepturi.</p>
+   <div id="data"></div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function ($) {
+        $("#btn1").click(function(){
+            $("#data").load("data.txt",(responseText, statusText, xmlHttpObject)=>{
+                //alert(responseText);
+                //alert(statusText);
+                //alert(xmlHttpObject);
+                console.log(xmlHttpObject);
+            });
+        });
+    });
+</script>

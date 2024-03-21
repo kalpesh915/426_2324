@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-production_version3.7.1.min.js"></script>
+    <script src="jquery.color-2.2.0.js"></script>
+</head>
+<body>
+   <button id="btn1">Hide / Show</button>
+   <hr>
+   <p id="op">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolores repellat officiis sint! Sapiente rem animi repellat maiores error dolorum inventore deleniti blanditiis obcaecati repudiandae? Laboriosam amet soluta fugit voluptatibus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ad nisi magni nobis. Vitae alias optio cumque? Nesciunt dicta magni optio, alias perferendis harum consectetur. Repellendus in quisquam esse suscipit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis magni vel dicta ipsam culpa, non officiis nobis vero? Voluptatibus, sint. Enim ab pariatur recusandae provident adipisci corrupti minima reprehenderit dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nihil obcaecati magni sapiente. Temporibus necessitatibus deserunt aut id itaque rerum placeat sunt, explicabo aspernatur quo illo odio, totam quas provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione libero quas commodi ad corporis. Sequi nulla doloribus ipsum quibusdam provident mollitia eum itaque aliquam tempora? Pariatur nisi enim qui optio!</p>
+</body>
+</html>
+
+<script>
+    /*  
+       jQuery - The noConflict() Method
+       What if you wish to use other frameworks on your pages, while still using jQuery?
+
+       jQuery and Other JavaScript Frameworks
+       As you already know; jQuery uses the $ sign as a shortcut for jQuery.
+
+       There are many other popular JavaScript frameworks like: Angular, Backbone, Ember, Knockout, and more.
+       What if other JavaScript frameworks also use the $ sign as a shortcut? If two different frameworks are using the same shortcut, one of them might stop working. The jQuery team have already thought about this, and implemented the noConflict() method.
+    */
+
+    // JQuery relase hold from $ sign, you can use jquery with JQuery shortcut
+    $.noConflict();
+
+    jQuery(document).ready(function () {
+        jQuery("#btn1").click(function(){
+            jQuery("#op").toggle(3000);
+        });
+    });
+</script>
