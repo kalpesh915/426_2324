@@ -1,0 +1,51 @@
+Cars
+carid, brand, model, number, fuel, color, seating, average, ac, type
+
+create table cars (carid int AUTO_INCREMENT PRIMARY key, carnumber varchar(20), brand varchar(20), model varchar(20), fuel varchar(20), color varchar(20), seating tinyint, average decimal(10,2), ac varchar(20), type varchar(20))
+
+INSERT INTO `cars` (`carid`, `carnumber`, `brand`, `model`, `fuel`, `color`, `seating`, `average`, `ac`, `type`) VALUES (NULL, 'GJ 03 AB 1122', 'Toyota', 'Innove', 'Diesel', 'white', '8', '11.5', 'Yes', 'Passenger'), (NULL, 'GJ 03 AE 1234', 'Maruti', 'Ertica', 'CNG', 'white', '10', '16', 'Yes', 'Private'),
+(NULL, 'GJ 03 AB 1102', 'Toyota', 'Corrola', 'Pterol', 'Black', '5', '17.5', 'Yes', 'Passenger'), (NULL, 'GJ 03 AE 5234', 'Maruti', 'Ecco', 'CNG', 'white', '10', '16', 'No', 'Private');
+
+Customers
+customerid, customername, dateofbirth, gender, address, phone, email, whatsapp, adharcard, licance, status
+
+CREATE TABLE customers (customerid int AUTO_INCREMENT PRIMARY key, customernamre varchar(20), dateofbirth date, gender varchar(10), address varchar(256), phone varchar(15), email varchar(128), whatsapp varchar(15), adahrcard varchar(20), licance varchar(20), status tinyint DEFAULT 1)
+
+INSERT INTO `customers` (`customerid`, `customername`, `dateofbirth`, `gender`, `address`, `phone`, `email`, `whatsapp`, `adahrcard`, `licance`, `status`) VALUES (NULL, 'Priyajitsinh jadeja', '2091-04-16', 'Male', 'Rajkot', '998899889900', 'jadeja@gmail.com', '9988998878', '112233112233', '890890890', '1'), (NULL, 'adarsh chavda', '2004-04-09', 'male', 'rajkot', '45378890985', 'adarsh@gmai.com', '88998889898', '8797987987987', '577657567', '1'),(NULL, 'Hensi Lambiya', '2001-04-16', 'Female', 'Rajkot', '991199889900', 'hensi@gmail.com', '91188998878', '00033112233', '81190890890', '1'), (NULL, 'Hemal Varu', '2004-04-09', 'Female', 'rajkot', '11378890985', 'hemal@gmai.com', '99998889898', '6787987987', '57765756733', '1');
+
+
+
+Drivers
+driverid,drivername, dateofbirth, gender, address, phone, email, whatsapp, adharcard, licance, licancetype, licanceexpiry, status
+
+CREATE TABLE drivers (driverid int AUTO_INCREMENT PRIMARY key, drivername varchar(20), dateofbirth date, gender varchar(10), address varchar(256), phone varchar(15), email varchar(128), whatsapp varchar(15), adahrcard varchar(20), licance varchar(20), licancetype varchar(20), licanceexpiry date, status tinyint DEFAULT 1)
+
+INSERT INTO `drivers` (`driverid`, `drivername`, `dateofbirth`, `gender`, `address`, `phone`, `email`, `whatsapp`, `adahrcard`, `licance`, `licancetype`, `licanceexpiry`, `status`) VALUES (NULL, 'Dhruvisha Dave', '2002-04-16', 'female', 'Rajkot', '9988776655', 'dhruvisha@gmail.com', '8899889988', '9876543212', '990990990', 'Heavy', '2034-04-16', '1'), (NULL, 'Aryan Thakrar', '2007-04-16', 'Male', 'Rajkot', '9900990099', 'aryan@gmail.com', '9988999900', '9988999999', '990000099977', 'Heavy', '2044-04-16', '1');
+
+Bookings
+bookingid, bookingdate, customerid, carid, driverid, bookingstart, bookingend, price, advance, note, status
+
+create TABLE bookings (bookingid int AUTO_INCREMENT PRIMARY key, bookingdate date, customerid int, carid int, driverid int, bookingstart date, bookingend date, price decimal(10,2), advance decimal(10,2), note varchar(512), status tinyint DEFAULT 1, CONSTRAINT fk_customer_booking FOREIGN key (customerid) REFERENCES customers(customerid), CONSTRAINT fk_carid_bookings FOREIGN key (carid) REFERENCES cars(carid), CONSTRAINT fk_driver_booking FOREIGN key(driverid) REFERENCES drivers(driverid) )
+
+INSERT INTO `bookings` (`bookingid`, `bookingdate`, `customerid`, `carid`, `driverid`, `bookingstart`, `bookingend`, `price`, `advance`, `note`, `status`) VALUES (NULL, '2024-04-16', '3', '2', '1', '2024-04-20', '2024-04-22', '12500', '6500', 'Dummy Text', '1');
+
+Reviews
+reviewid, customerid, bookingid, reviewdate, reviewmessage
+create table reviews (reviewid int AUTO_INCREMENT PRIMARY key, customerid int, bookingid int, reviewon timestamp DEFAULT CURRENT_TIMESTAMP, reviewmessage varchar(512), CONSTRAINT fk_customer_review FOREIGN key(customerid) REFERENCES customers(customerid), CONSTRAINT fk_booking_review FOREIGN key(bookingid) REFERENCES bookings(bookingid))
+
+
+Fueling
+fuelid, fuledate, carid, driverid, fueltype, quantity, price, 
+
+CREATE TABLE fueling (fuelid int AUTO_INCREMENT PRIMARY key, fueldate date, carid int, driverid int, fueltype varchar(20), quantity decimal(10,2), price decimal(10,2), CONSTRAINT fk_car_fueling FOREIGN key(carid) REFERENCES cars(carid), CONSTRAINT fk_driver_fueling FOREIGN key(driverid) REFERENCES drivers(driverid))
+
+Insurance
+insuranceid, carid, insurancedate, provider, satrtdate, expirydate, type, premium
+
+CREATE TABLE insurance (insuranceid int AUTO_INCREMENT PRIMARY key, carid int, insurancedate date, provider varchar(512), startdate date, enddate date, type varchar(128), premium decimal(10,2), CONSTRAINT fk_car_insurnce FOREIGN key(carid) REFERENCES cars(carid))
+
+
+Repairing
+repairid, carid, driverid, date, startdate, enddate, vendor, price
+
+create table repairing(repairid int AUTO_INCREMENT PRIMARY key, carid int, driverid int, repairdate date, startdate date, enddate date, vendor varchar(512), repairdescription varchar(1024), cost decimal(10,2))
