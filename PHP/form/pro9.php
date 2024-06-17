@@ -7,24 +7,36 @@
     if(isset($_POST["process"])){
         if(!empty($_POST["fname"])){
             $fname = filterData($_POST["fname"]);
+            if(!preg_match("/^[a-zA-Z-' ]*$/", $fname)){
+                $fnameerr = "Invalid First Name";
+            }
         }else{
             $fnameerr = "First name is Required";
         }
 
         if(!empty($_POST["lname"])){
             $lname = filterData($_POST["lname"]);
+            if(!preg_match("/^[a-zA-Z-' ]*$/", $lname)){
+                $fnameerr = "Invalid Last Name";
+            }
         }else{
             $lnameerr = "Last name is Required";
         }
 
         if(!empty($_POST["email"])){
             $email = filterData($_POST["email"]);
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $emailerr = "Invalid Email Address";
+            }
         }else{
             $emailerr = "Email is Required";
         }
 
         if(!empty($_POST["website"])){
             $website = filterData($_POST["website"]);
+            if(!filter_var($email, FILTER_VALIDATE_URL)){
+                $websiteerr = "Invalid Website URL";
+            }
         }else{
             $websiteerr = "Website is Required";
         }
