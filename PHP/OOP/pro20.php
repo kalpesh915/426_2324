@@ -1,7 +1,5 @@
 <?php
-    class ParentClass{
-        const msg = "Welcome to world of OOP with PHP";
+    class RBI{
+        
     }
-
-    echo ParentClass::msg;
 ?>
