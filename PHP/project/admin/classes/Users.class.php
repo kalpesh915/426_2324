@@ -25,6 +25,29 @@
             $sqlQuery = "update adminusers set fname = '$fname', lname = '$lname' where email = '$adminemail'";
             $this->connection->query($sqlQuery);
         }
+
+        public function updatePassword($adminemail, $newpassword){
+            $sqlQuery = "update adminusers set password = '$newpassword' where email = '$adminemail' ";
+            $this->connection->query($sqlQuery);
+        }
+
+        public function getLogs(){
+            $sqlQuery = "update logs set status = 1 where status = 0";
+            $this->connection->query($sqlQuery);
+
+            $sqlQuery = "select * from logs";
+            return $this->connection->query($sqlQuery);
+        }
+
+        public function deleteLogs($deleteType){
+            if($deleteType == 1){
+                $sqlQuery = "delete from logs where event like '%log%'";
+                $this->connection->query($sqlQuery);
+            }else if($deleteType == 2){
+                $sqlQuery = "delete from logs";   
+                $this->connection->query($sqlQuery);
+            }
+        }
     }
 
     $users = new Users();

@@ -28,5 +28,14 @@
             $sqlquery = "insert into logs (email, event) values ('$email', '$event')";
             $this->connection->query($sqlquery);
         }
+
+        public function getConnectionDetail(){
+            return [
+                "hostname" => $this->hostname,
+                "username" => $this->username,
+                "password" => $this->password,
+                "database" => $this->database
+            ];
+        }
     }
 ?>
