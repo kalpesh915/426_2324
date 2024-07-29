@@ -1,6 +1,8 @@
   <!-- Topbar -->
   <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+    <?php 
+        require_once("classes/Topbar.class.php");
+    ?>
       <!-- Sidebar Toggle (Topbar) -->
       <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
           <i class="fa fa-bars"></i>
@@ -14,25 +16,26 @@
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-bell fa-fw"></i>
                   <!-- Counter - Alerts -->
-                  <span class="badge badge-danger badge-counter">3+</span>
+                  <span class="badge badge-danger badge-counter"><?= $topbar->countNewNotifications();?></span>
               </a>
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                   <h6 class="dropdown-header">
                       Alerts Center
                   </h6>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                      <div class="mr-3">
-                          <div class="icon-circle bg-primary">
-                              <i class="fas fa-file-alt text-white"></i>
-                          </div>
-                      </div>
-                      <div>
-                          <div class="small text-gray-500">December 12, 2019</div>
-                          <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                      </div>
-                  </a>
-                  <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                  
+                      <?php 
+                        $result = $topbar->getSomeNewNotifications(3);
+
+                        while($row = $result->fetch_assoc()){
+                            echo "<a class='dropdown-item d-flex align-items-center' href='#'><div>
+                                <div class='small text-gray-500'>$row[event_time]</div>
+                                <span class='font-weight-bold'>$row[event]</span>
+                            </div></a>";
+                        }
+                      ?>
+                      
+                  <a class="dropdown-item text-center small text-gray-500" href="logs">Show All Alerts</a>
               </div>
           </li>
 
@@ -41,21 +44,27 @@
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-envelope fa-fw"></i>
                   <!-- Counter - Messages -->
-                  <span class="badge badge-danger badge-counter">7</span>
+                  <span class="badge badge-danger badge-counter"><?= $topbar->getUnreadMessagesCount(); ?></span>
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                   <h6 class="dropdown-header">
                       Message Center
                   </h6>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                      <div class="font-weight-bold">
-                          <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                              problem I've been having.</div>
-                          <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  <?php
+                    $result = $topbar->getSomeNewMessages(3);
+
+                    while($row = $result->fetch_assoc()){
+                        echo "<a class='dropdown-item d-flex align-items-center' href='readmessage?messageid=$row[messageid]'>
+                      <div class='font-weight-bold'>
+                          <div class='text-truncate'>$row[subject]</div>
+                          <div class='small text-gray-500'>$row[sendername] ( $row[messagetime] )</div>
                       </div>
-                  </a>
-                  <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                  </a>";
+                    }
+                  ?>
+                  
+                  <a class="dropdown-item text-center small text-gray-500" href="readnewmessages">Read More Messages</a>
               </div>
           </li>
 
@@ -64,7 +73,7 @@
           <!-- Nav Item - User Information -->
           <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $adminemail; ?></span>
                   <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
               </a>
               <!-- Dropdown - User Information -->
@@ -80,6 +89,18 @@
                   <a class="dropdown-item" href="password">
                       <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
                       Password
+                  </a>
+                  <a class="dropdown-item" href="seo">
+                      <i class="fas fa-search fa-sm fa-fw mr-2 text-gray-400"></i>
+                      SEO
+                  </a>
+                  <a class="dropdown-item" href="smtp">
+                      <i class="fas fa-envelope fa-sm fa-fw mr-2 text-gray-400"></i>
+                      SMTP
+                  </a>
+                  <a class="dropdown-item" href="backup">
+                      <i class="fas fa-hdd fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Backup
                   </a>
                   <a class="dropdown-item" href="logs">
                       <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>

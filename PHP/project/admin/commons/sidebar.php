@@ -59,14 +59,6 @@
           </div>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-          Addons
-      </div>
-
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -75,23 +67,38 @@
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                  <h6 class="collapse-header">Login Screens:</h6>
-                  <a class="collapse-item" href="login.html">Login</a>
-                  <a class="collapse-item" href="register.html">Register</a>
-                  <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                  <div class="collapse-divider"></div>
-                  <h6 class="collapse-header">Other Pages:</h6>
-                  <a class="collapse-item" href="404.html">404 Page</a>
-                  <a class="collapse-item" href="blank.html">Blank Page</a>
+                  <a class="collapse-item" href="contact">Contact</a>
+                  <a class="collapse-item" href="social">Social Media</a>
+              </div>
+          </div>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsemsg" aria-expanded="true" aria-controls="collapsemsg">
+              <i class="fas fa-fw fa-envelope"></i>
+              <span>Messges</span>
+          </a>
+          <div id="collapsemsg" class="collapse" aria-labelledby="headingmsg" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="readnewmessages">New</a>
+                  <a class="collapse-item" href="readallmessages">All</a>
               </div>
           </div>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-              <i class="fas fa-fw fa-chart-area"></i>
-              <span>Charts</span></a>
+          <a class="nav-link" href="faq">
+              <i class="fas fa-fw fa-question"></i>
+              <span>FAQ</span></a>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+          <a class="nav-link" href="services">
+              <i class="fas fa-fw fa-hands"></i>
+              <span>Services</span></a>
       </li>
 
       <!-- Nav Item - Tables -->

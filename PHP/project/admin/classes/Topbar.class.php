@@ -13,6 +13,18 @@
             $sqlQuery = "select * from logs where status = 0 order by (id) desc limit $limit";
             return $this->connection->query($sqlQuery);
         }
+
+        public function getUnreadMessagesCount(){
+            $sqlQuery = "select count(messageid) from messages where status = 0";
+            $result = $this->connection->query($sqlQuery);
+            $row = $result->fetch_assoc();
+            return $row["count(messageid)"];
+        }
+
+        public function getSomeNewMessages($limit){
+            $sqlQuery = "select * from messages where status = 0 order by (messageid) desc limit $limit";
+            return $this->connection->query($sqlQuery);
+        }
     }
 
     $topbar = new Topbar();
