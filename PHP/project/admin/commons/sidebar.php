@@ -19,13 +19,7 @@
               <span>Dashboard</span></a>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-          Interface
-      </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
@@ -89,6 +83,13 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
+          <a class="nav-link" href="category">
+              <i class="fas fa-fw fa-list"></i>
+              <span>Category</span></a>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
           <a class="nav-link" href="faq">
               <i class="fas fa-fw fa-question"></i>
               <span>FAQ</span></a>
@@ -99,6 +100,12 @@
           <a class="nav-link" href="services">
               <i class="fas fa-fw fa-hands"></i>
               <span>Services</span></a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="subscribers">
+              <i class="fas fa-fw fa-users"></i>
+              <span>Subscribers</span></a>
       </li>
 
       <!-- Nav Item - Tables -->

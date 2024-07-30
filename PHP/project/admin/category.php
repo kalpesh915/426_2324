@@ -1,25 +1,17 @@
 <?php
 require_once("commons/session.php");
-require_once("classes/Services.class.php");
+require_once("classes/Category.class.php");
 
 // change status code
 if(isset($_GET["status"])){
-    $serviceid = $services->filterData($_GET["serviceid"]);
-    $status = $services->filterData($_GET["status"]);
+    $categoryid = $category->filterData($_GET["categoryid"]);
+    $status = $category->filterData($_GET["status"]);
 
-    $services->changeServiceStatus($serviceid, $status);
+    $category->changeCategoryStatus($categoryid, $status);
 
-    header("location:services");
+    header("location:category");
 }
 
-// delete FAQ
-if(isset($_GET["delete"])){
-    $serviceid = $services->filterData($_GET["serviceid"]);
-    
-    $services->deleteService($serviceid);
-
-    header("location:services");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +59,7 @@ if(isset($_GET["delete"])){
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Services</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Category</h1>
                         <button type="button" class="btn btn-primary" onclick="history.back()">
                             <i class="fas fa-arrow-left mx-2"></i>Back</a>
                     </div>
@@ -95,25 +87,13 @@ if(isset($_GET["delete"])){
                                     <div id="addFAQ" class="collapse">
                                         <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                             <div class="my-3">
-                                                <label class="form-label" for="servicetitle">Enter Service Title</label>
-                                                <input type="text" class="form-control"  name="servicetitle" id="servicetitle" required>
+                                                <label class="form-label" for="categoryname">Enter Category Name</label>
+                                                <input type="text" class="form-control"  name="categoryname" id="categoryname" required>
                                             </div>
 
                                             <div class="my-3">
-                                                <label class="form-label" for="servicedescription">Enter Service Description</label>
-                                                <textarea class="form-control" name="servicedescription" id="servicedescription" required></textarea>
-                                            </div>
-
-                                            <div class="my-3">
-                                                <label class="form-label" for="serviceicon">Enter Service Icon</label>
-                                                <input type="text" class="form-control"  name="serviceicon" id="serviceicon" required>
-                                            </div>
-
-                                            <div class="my-3">
-                                                <input type="submit" value="Add New Service" class="btn btn-primary" name="addProcess">
-                                                <input type="reset" class="btn btn-danger" value="Reset">
-                                                <a href="https://fontawesome.com/search?m=free&o=r" class="btn btn-dark">Find Icons</a>
-                                                <button class="btn btn-info" type="button" data-toggle="modal" data-target="#howtoModal">How to Set Icon</button>
+                                                <input type="submit" value="Add New Category" class="btn btn-primary" name="addProcess">
+                                                <input type="reset" class="btn btn-danger" value="Reset">   
                                             </div>
                                         </form>
                                     </div>
@@ -122,42 +102,34 @@ if(isset($_GET["delete"])){
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
-                                                    <th>Title</th>
-                                                    <th>Icon</th>
+                                                    <th>Category Name</th>
                                                     <th>Status</th>
-                                                    <th>Delete</th>
                                                     <th>Edit</th>
                                                 </tr>
                                             </thead>
                                             <tfoot>
                                                 <tr>
-                                                    <th>Title</th>
-                                                    <th>Icon</th>
+                                                    <th>Category Name</th>
                                                     <th>Status</th>
-                                                    <th>Delete</th>
                                                     <th>Edit</th>
                                                 </tr>
                                             </tfoot>
                                             <tbody>
                                                 <?php 
-                                                    $result = $services->getAllServices();
+                                                    $result = $category->getAllCategory();
 
                                                     while($row = $result->fetch_assoc()){
                                                         if($row["status"] == 1){
-                                                            $statusbtn = "<a href='services?serviceid=$row[serviceid]&status=0' class='btn btn-danger'>Disable</a>";
+                                                            $statusbtn = "<a href='category?categoryid=$row[categoryid]&status=0' class='btn btn-danger'>Disable</a>";
                                                         }else{
-                                                            $statusbtn = "<a href='services?serviceid=$row[serviceid]&status=1' class='btn btn-success'>Enable</a>";
+                                                            $statusbtn = "<a href='category?categoryid=$row[categoryid]&status=1' class='btn btn-success'>Enable</a>";
                                                         }
 
                                                         echo "<tr>
-                                                            <td>$row[servicetitle]</td>
-                                                            <td> <i class='$row[serviceicon]'></i>   $row[serviceicon]</td>
+                                                            <td>$row[categoryname]</td>
                                                             <td>$statusbtn</td>
                                                             <td>
-                                                                <button class='btn btn-danger' type='button' onclick='confirmDelete($row[serviceid])'>Delete</button>
-                                                            </td>
-                                                            <td>
-                                                                <a href='editservice?serviceid=$row[serviceid]' class='btn btn-secondary'>Edit</a>
+                                                                <a href='editcategory?categoryid=$row[categoryid]' class='btn btn-secondary'>Edit</a>
                                                             </td>
                                                         </tr>";
                                                     }
@@ -196,59 +168,26 @@ if(isset($_GET["delete"])){
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 </body>
-<script>
-    function confirmDelete(serviceid){
-        if(confirm("Are you sure to delete this Services ???")){
-            window.location.href = "services?delete=true&serviceid="+serviceid;
-        }
-    }
-</script>
+
 </html>
-
-<!-- The Modal -->
-<div class="modal" id="howtoModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">How to Set Google Map Location</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <ol>
-            <li>Click Find Icons Button</li>
-            <li>You will landed in Font awsome free icons library</li>
-            <li>Click on Requrid icon</li>
-            <li>After open icon box</li>
-            <li>Select HTML</li>
-            <li>Copy Value of class Attribute</li>
-        </ol>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <?php
 if (isset($_POST["addProcess"])) {
-    $servicetitle = $services->filterData($_POST["servicetitle"]);
-    $servicedescription = $services->filterData($_POST["servicedescription"]);
-    $serviceicon = $services->filterData($_POST["serviceicon"]);
+    $categoryname = $category->filterData($_POST["categoryname"]);
 
-    $services->addNewService($servicetitle, $servicedescription, $serviceicon);
-    $services->logWriter($adminemail, "New Service $servicetitle Added in Database");
-    $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
-        <strong>Success : </strong> New Service $servicetitle Added in Database
+    if($category->addNewCategory($categoryname)){
+        $category->logWriter($adminemail, "$categoryname Category Added in Database");
+        $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
+        <strong>Success : </strong> New Categoery $categoryname Added in Database
         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span></button></div>";
-    header("location:services");
+    }else{
+        $_SESSION["msg"] = "<div class='alert alert-danger alert-dismissible'>
+        <strong>Success : </strong>Categoery $categoryname Already Added in Database
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span></button></div>";
+    }
+    
+    header("location:category");
 }
 ?>

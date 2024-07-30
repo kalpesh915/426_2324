@@ -1,25 +1,17 @@
 <?php
 require_once("commons/session.php");
-require_once("classes/FAQ.class.php");
+require_once("classes/Subscribers.class.php");
 
 // change status code
 if(isset($_GET["status"])){
-    $faqid = $faq->filterData($_GET["faqid"]);
-    $status = $faq->filterData($_GET["status"]);
+    $subscriberid = $subscribers->filterData($_GET["subscriberid"]);
+    $status = $subscribers->filterData($_GET["status"]);
 
-    $faq->changeFAQStatus($faqid, $status);
+    $subscribers->changeSubscriberStatus($subscriberid, $status);
 
-    header("location:faq");
+    header("location:subscribers");
 }
 
-// delete FAQ
-if(isset($_GET["delete"])){
-    $faqid = $faq->filterData($_GET["faqid"]);
-    
-    $faq->deleteFAQ($faqid);
-
-    header("location:faq");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +34,7 @@ if(isset($_GET["delete"])){
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -66,7 +59,7 @@ if(isset($_GET["delete"])){
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">FAQ</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Manage Subscribers</h1>
                         <button type="button" class="btn btn-primary" onclick="history.back()">
                             <i class="fas fa-arrow-left mx-2"></i>Back</a>
                     </div>
@@ -82,75 +75,39 @@ if(isset($_GET["delete"])){
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Title</h6>
-                                    <button data-toggle="collapse" data-target="#addFAQ" class="btn btn-primary" type="button">Add New</button>
 
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <!-- Custome code Here -->
-                                    <?php
-                                    require_once("commons/sessionprinter.php");
-                                    ?>
-                                    <div id="addFAQ" class="collapse">
-                                        <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                                            <div class="my-3">
-                                                <label class="form-label" for="question">Enter Question</label>
-                                                <textarea class="form-control" style="resize: none;" name="question" id="question" required></textarea>
-                                            </div>
-
-                                            <div class="my-3">
-                                                <label class="form-label" for="answer">Enter Answer</label>
-                                                <textarea class="form-control" style="resize: none;" name="answer" id="answer" required></textarea>
-                                            </div>
-
-                                            <div class="my-3">
-                                                <input type="submit" value="Add New FAQ" class="btn btn-primary" name="addProcess">
-                                                <input type="reset" class="btn btn-danger" value="Reset">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <hr>
                                     <div class="table-responsive">
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
-                                                    <th>Question</th>
-                                                    <th>Answer</th>
+                                                    <th>Subscriber Email</th>
                                                     <th>Status</th>
-                                                    <th>Delete</th>
-                                                    <th>Edit</th>
                                                 </tr>
                                             </thead>
                                             <tfoot>
                                                 <tr>
-                                                    <th>Question</th>
-                                                    <th>Answer</th>
+                                                    <th>Subscriber Email</th>
                                                     <th>Status</th>
-                                                    <th>Delete</th>
-                                                    <th>Edit</th>
                                                 </tr>
                                             </tfoot>
                                             <tbody>
-                                                <?php 
-                                                    $result = $faq->getAllFAQ();
+                                                <?php
+                                                    $result = $subscribers->getAllSubscribers();
 
                                                     while($row = $result->fetch_assoc()){
                                                         if($row["status"] == 1){
-                                                            $statusbtn = "<a href='faq?faqid=$row[faqid]&status=0' class='btn btn-danger'>Disable</a>";
+                                                            $statusbtn = "<a href='subscribers?subscriberid=$row[subscriberid]&status=0' class='btn btn-danger'>Disable</a>";
                                                         }else{
-                                                            $statusbtn = "<a href='faq?faqid=$row[faqid]&status=1' class='btn btn-success'>Enable</a>";
+                                                            $statusbtn = "<a href='subscribers?subscriberid=$row[subscriberid]&status=1' class='btn btn-success'>Enable</a>";
                                                         }
 
                                                         echo "<tr>
-                                                            <td>$row[question]</td>
-                                                            <td>$row[answer]</td>
+                                                            <td>$row[subscriberemail]</td>
                                                             <td>$statusbtn</td>
-                                                            <td>
-                                                                <button class='btn btn-danger' type='button' onclick='confirmDelete($row[faqid])'>Delete</button>
-                                                            </td>
-                                                            <td>
-                                                                <a href='editfaq?faqid=$row[faqid]' class='btn btn-secondary'>Edit</a>
-                                                            </td>
                                                         </tr>";
                                                     }
                                                 ?>
@@ -188,26 +145,5 @@ if(isset($_GET["delete"])){
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 </body>
-<script>
-    function confirmDelete(faqid){
-        if(confirm("Are you sure to delete this FAQ ???")){
-            window.location.href = "faq?delete=true&faqid="+faqid;
-        }
-    }
-</script>
+
 </html>
-
-<?php
-if (isset($_POST["addProcess"])) {
-    $question = $faq->filterData($_POST["question"]);
-    $answer = $faq->filterData($_POST["answer"]);
-
-    $faq->addNewFAQ($question, $answer);
-    $faq->logWriter($adminemail, "New FAQ $question Added in Database");
-    $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
-        <strong>Success : </strong> New FAQ $question Added in Database
-        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-        <span aria-hidden='true'>&times;</span></button></div>";
-    header("location:faq");
-}
-?>
