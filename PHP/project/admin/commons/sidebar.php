@@ -81,6 +81,20 @@
           </div>
       </li>
 
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseimg" aria-expanded="true" aria-controls="collapseimg">
+              <i class="fas fa-fw fa-image"></i>
+              <span>Images</span>
+          </a>
+          <div id="collapseimg" class="collapse" aria-labelledby="headingimg" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="addnewimage">Add New</a>
+                  <a class="collapse-item" href="managegallery">Gallery</a>
+                  <a class="collapse-item" href="manageslider">Slider</a>
+              </div>
+          </div>
+      </li>
+
       <!-- Nav Item - Charts -->
       <li class="nav-item">
           <a class="nav-link" href="category">
