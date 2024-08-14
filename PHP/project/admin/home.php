@@ -1,5 +1,6 @@
 <?php
-    require_once("commons/session.php");
+require_once("commons/session.php");
+require_once("classes/Users.class.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,13 +46,10 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Page Title</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Home Page</h1>
                         <button type="button" class="btn btn-primary" onclick="history.back()">
                             <i class="fas fa-arrow-left mx-2"></i>Back</a>
                     </div>
-
-                    <?php // require_once("commons/datacount.php"); 
-                    ?>
 
                     <div class="row">
 
@@ -59,13 +57,32 @@
                         <div class="col-xl-12 col-lg-12">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Title</h6>
+                                <div class="card-header py-3 d-flex flex-row align-items-center ">
+                                    <h6 class="m-0 font-weight-bold text-primary">
+                                        <?php 
+                                            $hours = date("H");
+
+                                            if($hours >= 6 and $hours <= 11){
+                                                $greetings = "Good Morning";
+                                            }else if($hours >= 12 and $hours <= 14){
+                                                $greetings = "Good Noon";
+                                            }else if($hours >= 15 and $hours <= 16){
+                                                $greetings = "Good Afternoon";
+                                            }else if($hours >= 16 ){
+                                                $greetings = "Good Evening";
+                                            }
+                                            $username = $users->getProfile($adminemail);
+                                            echo "<h3> Welcome {$username['fname']} {$username['lname']}, $greetings</h3>";
+                                        ?>
+                                    </h6>
 
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <!-- Custome code Here -->
+                                    <?php
+                                    require_once("commons/datacount.php");
+                                    ?>
                                 </div>
                             </div>
                         </div>

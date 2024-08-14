@@ -52,11 +52,13 @@
                                         
                                         <input type="submit" value="Login"class="btn btn-primary" name="loginProcess">
                                         <input type="reset" value="Reset" class="btn btn-danger">
-
-                                        
                                     </form>
                                     <hr>
+                                    <div class="text-center">
+                                        <a href="forgotpassword">Forgot Password</a>
+                                    </div>
                                     <div>
+                                        
                                        <?php 
                                             require_once("commons/sessionprinter.php");
                                        ?>

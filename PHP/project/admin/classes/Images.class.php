@@ -36,6 +36,23 @@
             $sqlQuery = "delete from images where imageid = $imageid";
             $this->connection->query($sqlQuery);
         }
+
+        public function updateImage($imageid, $imagetitle, $imagedescription, $imagepath = null, $imagetype){
+            if($imagepath !== null){
+                $sqlQuery = "select imagepath from images where imageid = $imageid";
+                $result = $this->connection->query($sqlQuery);
+                $row = $result->fetch_assoc();
+                unlink($row["imagepath"]);
+            }
+
+            if($imagepath !== null){
+                $sqlQuery = "update images set imagetitle = '$imagetitle', imagedescription = '$imagedescription', imagepath = '$imagepath', imagetype = '$imagetype' where imageid = $imageid";
+                $this->connection->query($sqlQuery);
+            }else{
+                $sqlQuery = "update images set imagetitle = '$imagetitle', imagedescription = '$imagedescription', imagetype = '$imagetype' where imageid = $imageid";
+                $this->connection->query($sqlQuery);
+            }
+        }
     }
 
     $images = new Images();

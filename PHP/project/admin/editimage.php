@@ -151,10 +151,9 @@ if (isset($_POST["updateProcess"])) {
     $imagetype = $images->filterData($_POST["imagetype"]);
     $imagefile = $_FILES["imagefile"];
 
+    $destination = null;
 
-    if (empty($imagefile["name"])) {
-        $destination = null;
-    } else {
+    if (!empty($imagefile["name"])) {
         if ($imagefile["type"] == "image/jpg" || $imagefile["type"] == "image/jpeg") {
             $name = $imagefile["name"];
             $src = $imagefile["tmp_name"];
@@ -166,21 +165,24 @@ if (isset($_POST["updateProcess"])) {
             } else {
                 $destination = "images/Slider $time $random $name";
             }
-
-            $images->addNewImage($imagetitle, $imagedescription, $destination, $imagetype);
-
             move_uploaded_file($src, $destination);
-
-            $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
-            <strong>Success : </strong> New Image Uploaded on Server
-            <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
         } else {
             $_SESSION["msg"] = "<div class='alert alert-danger alert-dismissible'>
             <strong>Error : </strong> Please Select Valid *.JPG files only.
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            header("location:editimage?imageid=$imageid");
         }
+    } else {
+        $destination = null;
     }
 
-    header("location:editimage?imageid=$imageid");
+    $images->updateImage($imageid, $imagetitle, $imagedescription, $destination, $imagetype);
+
+    $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
+            <strong>Success : </strong> New Image Uploaded on Server
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+
+   header("location:editimage?imageid=$imageid");
 }
+
 ?>
