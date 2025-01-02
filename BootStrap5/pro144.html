@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap5.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap5.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <button id="toastbtn" class="btn btn-primary">Show</button>
+        <hr>
+        <div class="toast">
+            <div class="toast-header">
+                <h3>Mahek From Rajkot</h3>
+                <button class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad numquam possimus excepturi sed adipisci vel repudiandae velit, asperiores quo tempora voluptate, quisquam ipsa animi fuga et nemo, nesciunt rem ipsam.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    document.getElementById("toastbtn").onclick = function() {
+      var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+      var toastList = toastElList.map(function(toastEl) {
+        return new bootstrap.Toast(toastEl)
+      })
+      toastList.forEach(toast => toast.show())
+    }
+</script>

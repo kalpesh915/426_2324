@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap5.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap5.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis deserunt quis incidunt, sunt inventore neque mollitia explicabo eligendi, soluta, enim modi cum tempora quo laboriosam non necessitatibus laudantium officiis? Non!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis deserunt quis incidunt, sunt inventore neque mollitia explicabo eligendi, soluta, enim modi cum tempora quo laboriosam non necessitatibus laudantium officiis? Non!</p>
+
+        <div class="text-center">
+            <button class="btn btn-primary" title="Mahek Arab" data-bs-toggle="tooltip"  data-bs-placement="top">Click Me</button>
+            <button class="btn btn-primary" title="Mahek Arab" data-bs-toggle="tooltip"  data-bs-placement="bottom">Click Me</button>
+            <button class="btn btn-primary" title="Mahek Arab" data-bs-toggle="tooltip"  data-bs-placement="left">Click Me</button>
+            <button class="btn btn-primary" title="Mahek Arab" data-bs-toggle="tooltip"  data-bs-placement="right">Click Me</button>
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis deserunt quis incidunt, sunt inventore neque mollitia explicabo eligendi, soluta, enim modi cum tempora quo laboriosam non necessitatibus laudantium officiis? Non!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis deserunt quis incidunt, sunt inventore neque mollitia explicabo eligendi, soluta, enim modi cum tempora quo laboriosam non necessitatibus laudantium officiis? Non!</p>
+    </div>
+</body>
+</html>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
